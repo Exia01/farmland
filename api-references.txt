@@ -33,3 +33,6 @@ Mongoose
 
     Embedding or referencing:
         -  https://www.oreilly.com/library/view/mongodb-applied-design/9781449340056/ch01.html
+    
+    Pull method: 
+        -   https://docs.mongodb.com/manual/reference/operator/update/pull/
