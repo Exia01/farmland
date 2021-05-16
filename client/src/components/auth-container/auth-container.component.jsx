@@ -14,9 +14,6 @@ export default function AuthContainer(props) {
   const classes = useStyles();
 
   const { isAuthenticated, isLoading } = useAuth0();
-  const combinedClasses = props.drawerIcon
-    ? classes.drawerAuth
-    : classes.NavICon;
 
   const authContainerClasses = clsx({
     [classes.root]: true, //always applies

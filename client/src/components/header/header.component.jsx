@@ -8,13 +8,11 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   IconButton,
   Container,
   Drawer,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   Divider,
 } from '@material-ui/core';
@@ -24,9 +22,6 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import StorefrontIcon from '@material-ui/icons/Storefront';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
-
-import { useTheme } from '@material-ui/core/styles';
 
 // jss Styles
 import useStyles from './header.styles';
@@ -36,7 +31,6 @@ import AuthContainer from '../auth-container/auth-container.component';
 export default function Header() {
   let history = useHistory();
   const classes = useStyles();
-  const theme = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -49,11 +43,6 @@ export default function Header() {
   }
 
   const itemsList = [
-    // {
-    //   text: 'Home',
-    //   icon: <HomeIcon />,
-    //   onClick: () => history.push('/'),
-    // },
     {
       text: 'Shop Online',
       icon: <StorefrontIcon />,
@@ -70,14 +59,6 @@ export default function Header() {
         handleDrawerClose();
       },
     },
-    // {
-    //   text: 'Login',
-    //   icon: <AccountBoxIcon />,
-    //   onClick: () => {
-    //     history.push('/login');
-    //     handleDrawerClose();
-    //   },
-    // },
   ];
 
   return (
@@ -89,7 +70,7 @@ export default function Header() {
               <Typography variant='h6'>FARMLAND</Typography>
             </Link>
             <ThemeToggle />
-            <AuthContainer  navIcon={true}/>
+            <AuthContainer navIcon={true} />
             <IconButton aria-label='shopping Cart' color='inherit'>
               <ShoppingCartIcon />
             </IconButton>
@@ -124,7 +105,7 @@ export default function Header() {
         </div>
         <List>
           {itemsList.map((item, index) => {
-            const { text, icon, onClick } = item;
+            const { text, onClick } = item;
             return (
               <ListItem button key={text} onClick={onClick}>
                 {/* {icon && <ListItemIcon>{icon}</ListItemIcon>} */}

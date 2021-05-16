@@ -19,7 +19,6 @@ export default function CurrentThemeProvider(props) {
       'localThemePreference',
       JSON.stringify(themePreference)
     );
-    console.log(themePreference);
   }, [themePreference]);
 
   return (

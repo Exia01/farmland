@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     '& div div': {
       flex: '0 auto',
-      
     },
   },
   title: {
@@ -28,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
 
   //drawer
   drawer: {
-    width: '60%',
+    width: drawerWidth,
   },
   drawerPaper: {
-    width: '60%',
+    width: drawerWidth,
   },
   drawerHeader: {
     display: 'flex',
