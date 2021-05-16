@@ -52,6 +52,14 @@ export default function Header() {
       },
     },
     {
+      text: 'Contact Us',
+      icon: <StorefrontIcon />,
+      onClick: () => {
+        history.push('/shop');
+        handleDrawerClose();
+      },
+    },
+    {
       text: 'Cart',
       icon: <ShoppingCartIcon />,
       onClick: () => {
@@ -69,6 +77,14 @@ export default function Header() {
             <Link to='/' className={classes.title}>
               <Typography variant='h6'>FARMLAND</Typography>
             </Link>
+            <div className={classes.centerNavLinksContainer}>
+              <Link to='/shop' className={classes.centerNavLinks}>
+                Shop Online
+              </Link>
+              <Link to='/contact' className={classes.centerNavLinks}>
+                Contact Us
+              </Link>
+            </div>
             <ThemeToggle />
             <AuthContainer navIcon={true} />
             <IconButton aria-label='shopping Cart' color='inherit'>
