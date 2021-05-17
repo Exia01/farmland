@@ -1,4 +1,5 @@
 import { Container, Grid, Paper } from '@material-ui/core';
+import HeroBanner from '../../components/hero-banner/hero-banner.component';
 
 import useStyles from './homepage.styles';
 
@@ -7,6 +8,7 @@ export default function HomePage() {
 
   return (
     <Container>
+      <HeroBanner />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>xs=12</Paper>

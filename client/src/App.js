@@ -7,6 +7,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import HomePage from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
 import TestPage from './components/testpage/testpage';
+import ProtectedRoute from './auth/protected-route';
 import Loading from './auth/loading';
 
 // Css
@@ -28,7 +29,7 @@ function App() {
           <Header />
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route exact path='/test' component={TestPage} />
+            <ProtectedRoute path='/test' component={TestPage} />
           </Switch>
         </Paper>
       </ThemeProvider>
