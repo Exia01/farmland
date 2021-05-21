@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
-//
+// Logo
+import logo from '../../uploads/images/icons/farmlandLogo3.png';
+//Material Ui
 import {
   AppBar,
   Toolbar,
@@ -28,9 +30,9 @@ import useStyles from './header.styles';
 import ThemeToggle from '../theme-toggle/theme-toggle.component';
 import AuthContainer from '../auth-container/auth-container.component';
 
-export default function Header() {
+export default function Header(props) {
   let history = useHistory();
-  const classes = useStyles();
+  const classes = useStyles(props);
 
   const [open, setOpen] = useState(false);
 
@@ -71,12 +73,16 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position='relative' title='Farmland' elevation={0}>
+      <AppBar position='relative' title='Farmland' elevation={0} className={classes.headerBg}>
         <Container type='div' className={classes.root}>
           <Toolbar>
-            <Link to='/' className={classes.title}>
-              <Typography variant='h6'>FARMLAND</Typography>
-            </Link>
+            <div className={classes.titleContainer}>
+              <Link to='/' className={classes.title}>
+                {/* <Typography variant='h6'>FARMLAND</Typography> */}
+                <img src={logo} alt='logo' />
+
+              </Link>
+            </div>
             <div className={classes.centerNavLinksContainer}>
               <Link to='/shop' className={classes.centerNavLinks}>
                 Shop Online
@@ -85,20 +91,22 @@ export default function Header() {
                 Contact Us
               </Link>
             </div>
-            <ThemeToggle />
-            <AuthContainer navIcon={true} />
-            <IconButton aria-label='shopping Cart' color='inherit'>
-              <ShoppingCartIcon />
-            </IconButton>
-            <IconButton
-              edge='start'
-              className={clsx(classes.menuButton, classes.dynamicIcon)}
-              color='inherit'
-              aria-label='Open Drawer'
-              onClick={handleDrawerOpen}
-            >
-              <MenuIcon />
-            </IconButton>
+            <div className={classes.rightLinksContainer}>
+              <ThemeToggle />
+              <AuthContainer navIcon={true} />
+              <IconButton aria-label='shopping Cart' color='inherit'>
+                <ShoppingCartIcon />
+              </IconButton>
+              <IconButton
+                edge='start'
+                className={clsx(classes.menuButton, classes.dynamicIcon)}
+                color='inherit'
+                aria-label='Open Drawer'
+                onClick={handleDrawerOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+            </div>
           </Toolbar>
         </Container>
       </AppBar>

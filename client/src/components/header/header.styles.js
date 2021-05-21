@@ -2,27 +2,49 @@ import { makeStyles } from '@material-ui/core/styles';
 import { DRAWER_WIDTH } from '../../utils/constants';
 const drawerWidth = DRAWER_WIDTH; //using constant
 const useStyles = makeStyles((theme) => ({
+  headerBg: {
+    background: theme.palette.type === 'light' ? 'white' : '#424242 ',
+  },
   root: {
     flexGrow: 1,
     // '& div div': {
     //   flex: '0 auto',
     // },
+    '& a': {
+      color: theme.palette.type === 'light' ? '#1c1d1d' : '#9fb777 ',
+    },
+    '& button': {
+      color: theme.palette.type === 'light' ? '#1c1d1d' : '#9fb777 ',
+    },
+    '& p': {
+      color: theme.palette.type === 'light' ? '#1c1d1d' : '#9fb777 ',
+    },
   },
-  title: {
-    flex: 0,
+  titleContainer: {
+    flex: '0 25%',
     marginRight: 'auto',
-    color: theme.palette.light ? 'Black' : 'White',
-    textDecoration: 'none',
     '&hover': {
       cursor: 'pointer',
     },
+    maxHeight: '65px',
+    '& img': {
+      maxHeight: '100%',
+    },
+    '& a': {
+      display: 'block',
+      // padding: '.5rem',
+      height: '25px',
+      textDecoration: 'none',
+    },
   },
+
   centerNavLinksContainer: {
-    flex: 1,
+    display: 'none',
+    flex: 'auto',
     justifyContent: 'center',
+
     '& a': {
       margin: '0 1rem',
-      color: 'white',
       fontWeight: 'bold',
       textDecoration: 'none',
       borderRadius: '50%',
@@ -32,11 +54,16 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'rgba(255, 255, 255, 0.08)',
       },
     },
-    display:'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
   },
+
+  rightLinksContainer: {
+    display: 'flex',
+    flex: '0 25%',
+  },
+
   menuButton: {
     // marginRight: theme.spacing(2),
     display: 'block',
