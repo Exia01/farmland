@@ -1,27 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
 .root {
+  height: 300px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(125, 125, 125, 0.65);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.overlay .contentContainer p {
+  margin: 0;
+  font-weight: bold;
+}
+.overlay .contentContainer {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+.overlay .contentContainer .imgDiv {
+  max-width: 115px;
+  max-height: 115px;
+  margin-bottom: 0.5rem;
+}
+.overlay .contentContainer .imgDiv img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.overlay .item {
+  flex: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.overlay .item a {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  align-items: center;
+  border: 2px solid white;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.overlay .item a:hover {
+  background-color: #ffffff47 !important;
+}
+
+.overlay p {
+  margin: 0;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.overlay p:first-child {
+  border-right: 2px solid white;
+  padding: 0.5rem;
+}
+.overlay p:last-child {
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* .root {
   width: 100vw;
   position: relative;
   margin-left: calc(-50vw + 50%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 0.6;
   height: 300px;
-  /* left: 50%;
-  margin-left: -50vw; */
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.root .backgroundImage {
+.root .indexSet {
+  z-index: 2;
 }
 
+.root .paperDiv {
+  background: none;
+}
 .root .titleContainer {
+  color: white;
 }
 
-.root .heroImage {
+.root .logo {
+  max-height: 100px;
+  max-width: 100px;
+}
+.root .logo img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.root .title {
-}
+.root .btnBox {
+} */
 
-.root .btnTitle {
-}
+/* left: 50%;
+margin-left: -50vw; */
