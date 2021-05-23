@@ -8,7 +8,7 @@ import logo from '../../uploads/images/icons/farmLogo.png';
 // import useStyles from './hero-banner.styles';
 
 // Material Ui
-import { Container, Grid, Paper } from '@material-ui/core';
+import { Container, Grid, Paper, Typography } from '@material-ui/core';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 export default function HeroBanner() {
@@ -23,6 +23,7 @@ export default function HeroBanner() {
           <div className={styles.imgDiv}>
             <img src={logo} alt='logo' />
           </div>
+          <Typography variant='h3'>FARMLAND</Typography>
           <div className={styles.item}>
             <Link to='/shop'>
               <p className={styles.title}>Shop Now</p>
@@ -38,24 +39,3 @@ export default function HeroBanner() {
   );
 }
 
-{
-  /* <Container className={classes.indexSet}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Paper className={classes.paperDiv} elevation={0}>
-              <div className={classes.titleContainer}>
-                <div className={classes.logo}>
-                  <img src={logo} alt='logo' />
-                </div>
-                <div className={classes.btnBox}>
-                  <p classes={classes.title}>FARMLAND</p>
-                  <p classes={classes.titleIcon}>
-                    Shop now <span>Icon</span>
-                  </p>
-                </div>
-              </div>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Container> */
-}

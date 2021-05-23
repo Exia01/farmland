@@ -53,6 +53,13 @@ body {
   justify-content: center;
   padding: 0.5rem;
 }
+
+.overlay h3 {
+  flex: 100%;
+  text-align: center;
+  margin: 0.5rem;
+}
+
 .overlay .item a {
   display: flex;
   text-decoration: none;
@@ -69,58 +76,18 @@ body {
   background-color: #ffffff47 !important;
 }
 
-.overlay p {
+.overlay .item p {
   margin: 0;
   font-weight: bold;
-  margin: 1rem;
+
 }
 
-.overlay p:first-child {
+.overlay .item p:first-child {
   border-right: 2px solid white;
   padding: 0.5rem;
 }
-.overlay p:last-child {
+.overlay .item p:last-child {
   padding: 0 0.5rem;
   display: flex;
   align-items: center;
 }
-
-/* .root {
-  width: 100vw;
-  position: relative;
-  margin-left: calc(-50vw + 50%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  opacity: 0.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.root .indexSet {
-  z-index: 2;
-}
-
-.root .paperDiv {
-  background: none;
-}
-.root .titleContainer {
-  color: white;
-}
-
-.root .logo {
-  max-height: 100px;
-  max-width: 100px;
-}
-.root .logo img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.root .btnBox {
-} */
-
-/* left: 50%;
-margin-left: -50vw; */
