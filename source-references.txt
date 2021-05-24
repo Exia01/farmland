@@ -2,7 +2,7 @@ Client:
     Material Ui Breakpoints:
         -https://material-ui.com/customization/breakpoints/#theme-breakpoints-up-key-media-query
 
-    Using multiple classes on Material UI:
+    Using multiple classes on Material UI "ClX":
         -https://stackoverflow.com/questions/57557271/how-to-use-clsx-in-react
 
     Auth0:
