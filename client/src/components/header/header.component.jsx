@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
+import ThemeToggle from '../theme-toggle/theme-toggle.component';
+import AuthContainer from '../auth-container/auth-container.component';
 
 // Logo
 import logo from '../../uploads/images/icons/farmlandLogo3.png';
@@ -27,8 +29,6 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 
 // jss Styles
 import useStyles from './header.styles';
-import ThemeToggle from '../theme-toggle/theme-toggle.component';
-import AuthContainer from '../auth-container/auth-container.component';
 
 export default function Header(props) {
   let history = useHistory();
@@ -78,7 +78,6 @@ export default function Header(props) {
           <Toolbar>
             <div className={classes.titleContainer}>
               <Link to='/' className={classes.title}>
-                {/* <Typography variant='h6'>FARMLAND</Typography> */}
                 <img src={logo} alt='logo' />
 
               </Link>
