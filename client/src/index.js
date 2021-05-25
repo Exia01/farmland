@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // Components
-import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
 
 // Material UI Baseline
 import { CssBaseline } from '@material-ui/core';
@@ -17,7 +16,6 @@ import CurrentThemeProvider from './contexts/theme.context';
 
 const app = (
   <BrowserRouter>
-    <Auth0ProviderWithHistory>
       {/* <React.StrictMode> */}
       <CssBaseline>
         <CurrentThemeProvider>
@@ -25,7 +23,6 @@ const app = (
         </CurrentThemeProvider>
       </CssBaseline>
       {/* </React.StrictMode> */}
-    </Auth0ProviderWithHistory>
   </BrowserRouter>
 );
 

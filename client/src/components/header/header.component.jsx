@@ -83,7 +83,7 @@ export default function Header(props) {
               </Link>
             </div>
             <div className={classes.centerNavLinksContainer}>
-              <Link to='/shop' className={classes.centerNavLinks}>
+              <Link to='/test' className={classes.centerNavLinks}>
                 Shop Online
               </Link>
               <Link to='/contact' className={classes.centerNavLinks}>

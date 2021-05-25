@@ -1,5 +1,5 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import clsx from 'clsx';
+import { useState } from 'react';
 
 //Components
 import LoadingAnimation from '../loading-animation/loading-animation.component';
@@ -13,7 +13,12 @@ import { Typography } from '@material-ui/core';
 export default function AuthContainer(props) {
   const classes = useStyles();
 
-  const { isAuthenticated, isLoading } = useAuth0();
+
+  
+  // //  To be replaced with whatever service
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const authContainerClasses = clsx({
     [classes.root]: true, //always applies
