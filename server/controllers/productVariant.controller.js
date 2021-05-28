@@ -11,7 +11,7 @@ exports.index = async (req, res, next) => {
     return res.status(200).json({ productVariants: productVariants });
   } catch (err) {
     let message = 'Could not complete request';
-    return res.status(500).json({ error: message, err });
+    return res.status(500).json({ msg: message, err });
   }
 };
 
@@ -39,7 +39,7 @@ exports.createProductVariant = async (req, res, next) => {
     return res.status(200).json({ productVariant: savedProductVariant });
   } catch (err) {
     let errMsg = err.stack;
-    res.status(500).json({ error: 'Request could not be completed', errMsg });
+    res.status(500).json({ msg: 'Request could not be completed', errMsg });
   }
 };
 
@@ -52,7 +52,7 @@ exports.getProductVariant = async (req, res, next) => {
     console.log(err.stack);
     const errMsg = err.stack;
     let message = 'Could not complete request';
-    return res.status(500).json({ error: message, errMsg, err });
+    return res.status(500).json({ msg: message, errMsg, err });
   }
 };
 
@@ -79,7 +79,7 @@ exports.updateProductVariant = async (req, res, next) => {
   } catch (err) {
     console.log(err.stack);
     const errMsg = err.stack;
-    res.status(500).json({ error: 'Request could not be completed', errMsg });
+    res.status(500).json({ msg: 'Request could not be completed', errMsg });
   }
 };
 
@@ -95,6 +95,6 @@ exports.DeleteProductVariant = async (req, res, next) => {
   } catch (err) {
     let message = 'Could not complete request';
     let errorMsg = err.stack;
-    return res.status(500).json({ error: message, errorMsg });
+    return res.status(500).json({ msg: message, errorMsg });
   }
 };

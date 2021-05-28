@@ -12,7 +12,7 @@ exports.index = async (req, res, next) => {
   } catch (err) {
     let errMsg = err.stack;
     let message = 'Could not complete request';
-    res.status(500).json({ error: message, errMsg });
+    res.status(500).json({ msg: message, errMsg });
   }
 };
 
@@ -44,7 +44,7 @@ exports.createProduct = async (req, res, next) => {
   } catch (err) {
     let errMsg = err.stack;
     let message = 'Could not complete request';
-    res.status(500).json({ error: message, errMsg });
+    res.status(500).json({ msg: message, errMsg });
   }
 };
 
@@ -60,7 +60,7 @@ exports.getProduct = async (req, res, next) => {
   } catch (error) {
     let errMsg = err.stack;
     let message = 'Could not complete request';
-    res.status(500).json({ error: message, errMsg });
+    res.status(500).json({ msg: message, errMsg });
   }
 };
 
@@ -79,7 +79,7 @@ exports.updateProduct = async (req, res, next) => {
   } catch (err) {
     let errMsg = err.stack;
     let message = 'Could not complete request';
-    res.status(500).json({ error: message, errMsg });
+    res.status(500).json({ msg: message, errMsg });
   }
 };
 
@@ -91,6 +91,6 @@ exports.deleteProduct = async (req, res, next) => {
   } catch (err) {
     let errMsg = err.stack;
     let message = 'Could not complete request';
-    res.status(500).json({ error: message, errMsg });
+    res.status(500).json({ msg: message, errMsg });
   }
 };
