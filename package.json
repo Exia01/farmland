@@ -18,15 +18,18 @@
   },
   "homepage": "https://github.com/Exia01/farmland#readme",
   "dependencies": {
-    "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
-    "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
-    "helmet": "^4.4.1",
+    "helmet": "^4.6.0",
+    "axios": "^0.21.1",
+    "mongoose": "^5.12.12",
+    "dotenv": "^8.6.0",
+    "dotenv-safe": "^8.2.0",
     "http-status": "^1.5.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.12.1",
     "morgan": "^1.10.0",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "bcrypt": "^5.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2"
   }
 }
