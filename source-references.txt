@@ -24,6 +24,9 @@ Client:
         - https://rossbulat.medium.com/using-cookies-in-react-redux-and-react-router-4-f5f6079905dc
         - https://www.tutorialspoint.com/how-to-set-cookies-in-reactjs
 
+    Adding google login:
+        - https://dev.to/sivaneshs/add-google-login-to-your-react-apps-in-10-mins-4del
+
 
 
 
@@ -73,3 +76,5 @@ Server:
         Pull method: 
             -   https://docs.mongodb.com/manual/reference/operator/update/pull/
 
+        Create Vs Save method: 
+            -   https://stackoverflow.com/questions/38290684/mongoose-save-vs-insert-vs-create/38291042
