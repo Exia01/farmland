@@ -6,7 +6,8 @@ import { ThemeContext } from './contexts/theme.context';
 import HomePage from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
 import TestPage from './components/testpage/testpage';
-
+import Login from './pages/login/login.component';
+import Register from './pages/register/register.component';
 
 // Css
 import './App.css';
@@ -14,7 +15,6 @@ import './App.css';
 import { Paper, ThemeProvider } from '@material-ui/core';
 
 function App() {
-
   const theme = useContext(ThemeContext);
 
   return (
@@ -24,6 +24,8 @@ function App() {
           <Header />
           <Switch>
             <Route exact path='/' component={HomePage} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
             {/* Protected Test Route Page */}
           </Switch>
         </Paper>
