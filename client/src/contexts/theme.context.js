@@ -11,6 +11,18 @@ export default function CurrentThemeProvider(props) {
   const theme = createMuiTheme({
     palette: {
       type: themePreference.palette.type,
+      primary: {
+        light: '#8fb54e',
+        main: '#74a322',
+        dark: '#517217',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#5c544d',
+        main: '#342A21',
+        dark: '#241d17',
+        contrastText: '#000',
+      },
     },
   });
 
