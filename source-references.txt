@@ -27,6 +27,12 @@ Client:
     Adding google login:
         - https://dev.to/sivaneshs/add-google-login-to-your-react-apps-in-10-mins-4del
 
+    Autocomplete:
+        - https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+
+    Login and signUp naming convention: 
+        - https://ux.stackexchange.com/questions/11936/when-to-use-join-register-or-sign-up
+
 
 
 
