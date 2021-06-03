@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Grid, Paper, Typography } from '@material-ui/core';
 import useStyles from '../../components/header/header.styles';
-
-//  import contactBanner from '../../uploads/images/banners/';
+import styles from './contact.module.css';
+import logo from '../../uploads/images/icons/farmLogo.png';
 import contactBanner from '../../uploads/images/banners/megan-thomas-xMh_ww8HN_Q-unsplash.jpg';
 
 
@@ -16,18 +16,30 @@ const Contact = () => {
                         className=''
                         style={{ backgroundImage: `url(${contactBanner})` }}
                     >
-                        <Typography 
-                            variant='h3'
-                            component='h1'
-                            align='center'
-                            color='black'
-                            gutterBottom>
-                            Contact Component
-                        </Typography>
                     </div>
                 </Grid>
             </Grid>
-
+            <div
+                className={styles.root}
+                style={{ backgroundImage: `url(${contactBanner})` }}
+                >
+                <div className={styles.overlay}>
+                    <div className={styles.contentContainer}>
+                    <div className={styles.imgDiv}>
+                        <img src={logo} alt='logo' />
+                    </div>
+                    <Typography 
+                        variant='h1'
+                        component='h1'
+                        align='center'
+                        color='black'
+                        gutterBottom>
+                        CONTACT US
+                    </Typography>
+                   
+                    </div>
+                </div>
+            </div>
         </Container>
     )
 }
