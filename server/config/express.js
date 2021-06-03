@@ -6,7 +6,7 @@ const routes = require('../routes/v1');
 // const compress = require('compression');
 // const { logs } = require('./vars');
 
-/*Express instance*/
+/* Create Express Instance Here -->  REQUIRE instance in where SERVER 'LISTENS' */
 const app = express();
 
 app.use(morgan('dev'));

@@ -5,6 +5,7 @@ import { ThemeContext } from './contexts/theme.context';
 // Components
 import HomePage from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
+import Contact from './pages/contact/contact.component';
 import TestPage from './components/testpage/testpage';
 
 
@@ -24,6 +25,7 @@ function App() {
           <Header />
           <Switch>
             <Route exact path='/' component={HomePage} />
+            <Route path='/contact' component={Contact} />
             {/* Protected Test Route Page */}
           </Switch>
         </Paper>
