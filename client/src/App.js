@@ -6,6 +6,7 @@ import { ThemeContext } from './contexts/theme.context';
 import HomePage from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
 import Contact from './pages/contact/contact.component';
+import Products from './pages/products/products.component';
 import TestPage from './components/testpage/testpage';
 
 
@@ -26,6 +27,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route path='/contact' component={Contact} />
+            <Route path='/products' component={Products} />
             {/* Protected Test Route Page */}
           </Switch>
         </Paper>

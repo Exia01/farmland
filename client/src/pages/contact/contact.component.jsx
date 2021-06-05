@@ -117,7 +117,7 @@ const Contact = () => {
                     Questions? Ask Us!
                     </Typography>
                 </Grid>
-                <Grid item xs='12' container spacing={3} justify='center'>
+                <Grid item xs='12' container justify='center'>
                     <form
                         onSubmit={handleSubmit} 
                         noValidate 
