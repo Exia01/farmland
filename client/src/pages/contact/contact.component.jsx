@@ -19,20 +19,48 @@ const useStyles = makeStyles({
 const Contact = () => {
     const classes = useStyles();
 
+    // -- Form Hooks
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactMessage, setContactMessage] = useState('');
+    // -- Form Errors
+    const [errorName, setErrorName] = useState(false);
+    const [errorEmail, setErrorEmail] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let commentSubmission = {
-            contact_name: contactName,
-            contact_email: contactEmail,
-            message: contactMessage
+        setErrorName(false);
+        setErrorEmail(false);
+        setErrorMessage(false);
+
+        if(contactName == '') {
+            setErrorName(true);
         }
-        // -- TEST -- //
-        // console.log(commentSubmission);
+        if(contactEmail == '') {
+            setErrorEmail(true);
+        }
+        if(contactMessage == '') {
+            setErrorMessage(true);
+        }
+
+        if(contactName && contactEmail && contactMessage) {
+
+            let commentSubmission = {
+                contact_name: contactName,
+                contact_email: contactEmail,
+                message: contactMessage
+            }
+            // -- TEST -- //
+            console.log(commentSubmission);
+
+            // Reset Fields
+            setContactName('')
+            setContactEmail('')
+            setContactMessage('')
+        }
+
 
         // Send to API
 /*        try {
@@ -46,10 +74,10 @@ const Contact = () => {
             throw err;
         }
 */
-        // Reset Fields
-        setContactName('')
-        setContactEmail('')
-        setContactMessage('')
+        // // Reset Fields
+        // setContactName('')
+        // setContactEmail('')
+        // setContactMessage('')
     }
 
     return (
@@ -104,6 +132,7 @@ const Contact = () => {
                                 label='Name'
                                 className={classes.field}
                                 variant='outlined'
+                                error={errorName}
                                 fullWidth>
                             </TextField>
                         </Grid>
@@ -115,6 +144,7 @@ const Contact = () => {
                                 label='Email'
                                 className={classes.field}
                                 variant='outlined'
+                                error={errorEmail}
                                 fullWidth>
                             </TextField>
                         </Grid>
@@ -128,6 +158,7 @@ const Contact = () => {
                                 variant='outlined'
                                 fullWidth
                                 multiline
+                                error={errorMessage}
                                 rows={4}>
                             </TextField>
                         </Grid>
