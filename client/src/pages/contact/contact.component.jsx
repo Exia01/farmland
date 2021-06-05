@@ -6,6 +6,9 @@ import logo from '../../uploads/images/icons/farmLogo.png';
 import contactBanner from '../../uploads/images/banners/megan-thomas-xMh_ww8HN_Q-unsplash.jpg';
 
 const useStyles = makeStyles({
+    form_container: {
+        width: 500
+    },
     field: {
         marginTop: 20,
         marginBottom: 20,
@@ -41,6 +44,9 @@ const Contact = () => {
             </div>
         </Container>
         {/* <Container> */}
+
+            <div>
+
             <Grid container spacing={3}>
                 <Grid item xs='12'>
                     <Typography 
@@ -51,7 +57,7 @@ const Contact = () => {
                     </Typography>
                 </Grid>
                 <Grid item xs='12' container spacing={3} justify='center'>
-                    <form noValidate autoComplete='off'>
+                    <form noValidate autoComplete='off' className={classes.form_container}>
                         <Grid item xs='12' md='6'>
                             <TextField 
                                 label='Name'
@@ -70,15 +76,20 @@ const Contact = () => {
                         </Grid>
                         <Grid item xs='12'>
                             <TextField 
+                                id='outlined-multiline-flexible'
                                 label='Message'
                                 className={classes.field}
                                 variant='outlined'
-                                fullWidth>
+                                fullWidth
+                                multiline
+                                rows={4}>
                             </TextField>
                         </Grid>
                     </form>
                 </Grid>
             </Grid>
+
+            </div>
         {/* </Container> */}
         </div>
     )
