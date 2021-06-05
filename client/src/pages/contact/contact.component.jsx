@@ -31,9 +31,21 @@ const Contact = () => {
             contact_email: contactEmail,
             message: contactMessage
         }
+        // -- TEST -- //
+        // console.log(commentSubmission);
 
-        console.log(commentSubmission);
-
+        // Send to API
+/*        try {
+            fetch('/api/contact', commentSubmission)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                });
+        } catch(err) {
+            console.log(err);
+            throw err;
+        }
+*/
         // Reset Fields
         setContactName('')
         setContactEmail('')
