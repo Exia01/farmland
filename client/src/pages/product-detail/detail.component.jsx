@@ -21,7 +21,8 @@ const useStyles = makeStyles({
         height: 500,
     },
     buttonSpace: {
-        margin: 10
+        margin: 10,
+        marginBottom: 30
     },
 
 })
@@ -45,21 +46,27 @@ const ProductDetail = (props) => {
                             <Divider light />
                         </Grid>
                         <Grid item xs={12} container spacing={3} direction='column' className='size_choice'>
-                            <Typography variant='p'>Size</Typography>
-                            <Grid item xs={12}>
-                                    <Button className={classes.buttonSpace} variant="outlined" color="primary">Option #1</Button>
-                                    <Button className={classes.buttonSpace} variant="outlined" color="primary">Option #2</Button>
-                                    <Button className={classes.buttonSpace} variant="outlined" color="primary">Option #3</Button>
-                            </Grid>
+                            <form action="/product/submit" method="post">
+                            
+                                <Typography variant='p'>Size</Typography>
+                                <Grid item xs={12}>
+                                        <Button className={classes.buttonSpace} variant="outlined" color="primary">Option #1</Button>
+                                        <Button className={classes.buttonSpace} variant="outlined" color="primary">Option #2</Button>
+                                        <Button className={classes.buttonSpace} variant="outlined" color="primary">Option #3</Button>
+                                </Grid>
 
-                            <Typography variant='p'>Quantity</Typography>
-                            <Grid item xs={12} md={4}>
-                                <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
-                                    <Button>+</Button>
-                                    <Typography variant='h4' align='center'>1</Typography>
-                                    <Button>-</Button>
-                                </ButtonGroup>
-                            </Grid>
+                                <Typography variant='p'>Quantity</Typography>
+                                <Grid item xs={12} md={4}>
+                                    <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
+                                        <Button>+</Button>
+                                        <Typography variant='h4' align='center'>1</Typography>
+                                        <Button>-</Button>
+                                    </ButtonGroup>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Button type='submit' className={classes.buttonSpace} variant='contained' color='secondary' fullWidth>Add to Cart</Button>
+                                </Grid>
+                            </form>
                         </Grid>
                         <Grid item xs={12} >
                             <Typography variant='p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic praesentium, dolor tempore commodi accusamus vero laborum aperiam illo fuga veniam quibusdam perferendis eveniet alias est ab minima. Itaque dolor voluptatem quod placeat quaerat sunt quam molestias delectus, ut ipsa officiis. Obcaecati perferendis, quia sunt voluptatem corporis illum cupiditate quos tempore sint voluptatum iste vel nesciunt. Corrupti debitis voluptates iusto quo, dolor nobis animi ipsum deleniti. </Typography>

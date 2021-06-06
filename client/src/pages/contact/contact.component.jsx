@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Grid, makeStyles, Paper, TextField, Typography, Button } from '@material-ui/core';
 // import useStyles from '../../components/header/header.styles';
 import styles from './contact.module.css';
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     field: {
         marginTop: 20,
         marginBottom: 20,
-        display: 'block'
+        // display: 'block'
     }
 });
 
@@ -27,6 +27,8 @@ const Contact = () => {
     const [errorName, setErrorName] = useState(false);
     const [errorEmail, setErrorEmail] = useState(false);
     const [errorMessage, setErrorMessage] = useState(false);
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
