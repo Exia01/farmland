@@ -12,6 +12,21 @@ const Products = () => {
     const classes = useStyles();
     const [allProducts, setAllProducts] = useState([])
 
+    useEffect( async () => {
+        // let prod = await fetch('/api/products').then(res => res.json());
+        // setAllProducts(prod);
+
+        // -- TEMP --> Loop through all products
+        // return (allProducts.map(product => (
+        //     <Grid item xs={12} sm={6} md={4} spacing={3}>
+        //         <ProductCard product={product}/>
+        //     </Grid>
+
+        //     ))
+        // )
+
+    }, [])
+
     return (
         <Container>
             <Grid container spacing={3}>

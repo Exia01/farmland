@@ -13,19 +13,23 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 345,
     },
+    container: {
+        marginTop: 30,
+        marginBottom: 50
+    },
     media: {
         height: 500,
     },
     buttonSpace: {
         margin: 10
     },
-    size_choice: {
-        margin: 20
-    }
+
 })
 
 const ProductDetail = (props) => {
     const classes = useStyles();
+
+    console.log(`Props: ${props}`);
 
     return (
         <div>
@@ -36,8 +40,8 @@ const ProductDetail = (props) => {
                     </Grid>
                     <Grid item xs={12} md={4} container>
                         <Grid item xs={12}>
-                            <Typography variant='h3'>Product Detail Title</Typography>
-                            <Typography variant='h4'>$ 0.00</Typography>
+                            <Typography variant='h4'>Product Detail Title</Typography>
+                            <Typography variant='h5'>$ 0.00</Typography>
                             <Divider light />
                         </Grid>
                         <Grid item xs={12} container spacing={3} direction='column' className='size_choice'>
@@ -52,17 +56,17 @@ const ProductDetail = (props) => {
                             <Grid item xs={12} md={4}>
                                 <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
                                     <Button>+</Button>
-                                    <Typography variant='h4'>1</Typography>
+                                    <Typography variant='h4' align='center'>1</Typography>
                                     <Button>-</Button>
                                 </ButtonGroup>
                             </Grid>
                         </Grid>
                         <Grid item xs={12} >
-                            <Typography variant='h5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic praesentium, dolor tempore commodi accusamus vero laborum aperiam illo fuga veniam quibusdam perferendis eveniet alias est ab minima. Itaque dolor voluptatem quod placeat quaerat sunt quam molestias delectus, ut ipsa officiis. Obcaecati perferendis, quia sunt voluptatem corporis illum cupiditate quos tempore sint voluptatum iste vel nesciunt. Corrupti debitis voluptates iusto quo, dolor nobis animi ipsum deleniti. </Typography>
+                            <Typography variant='p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic praesentium, dolor tempore commodi accusamus vero laborum aperiam illo fuga veniam quibusdam perferendis eveniet alias est ab minima. Itaque dolor voluptatem quod placeat quaerat sunt quam molestias delectus, ut ipsa officiis. Obcaecati perferendis, quia sunt voluptatem corporis illum cupiditate quos tempore sint voluptatum iste vel nesciunt. Corrupti debitis voluptates iusto quo, dolor nobis animi ipsum deleniti. </Typography>
 
                             <Divider light/>
 
-                            <Typography variant='h5'>Nostrum quasi itaque et deserunt id debitis hic voluptatibus obcaecati, praesentium, dolorum sed explicabo incidunt aliquid assumenda non laudantium molestiae quis consequuntur inventore molestias beatae saepe ipsam? Mollitia, molestiae dolores sapiente doloribus soluta explicabo architecto.</Typography>
+                            <Typography variant='p'>Nostrum quasi itaque et deserunt id debitis hic voluptatibus obcaecati, praesentium, dolorum sed explicabo incidunt aliquid assumenda non laudantium molestiae quis consequuntur inventore molestias beatae saepe ipsam? Mollitia, molestiae dolores sapiente doloribus soluta explicabo architecto.</Typography>
                         </Grid>
                     </Grid>
                 </Grid>
