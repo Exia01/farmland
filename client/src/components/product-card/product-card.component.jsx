@@ -39,7 +39,7 @@ const ProductCard = (props) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="primary">
+                    <Button size="small" color="primary" href="/products/5">
                     Learn More
                     </Button>
                 </CardActions>

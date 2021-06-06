@@ -7,6 +7,7 @@ import HomePage from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
 import Contact from './pages/contact/contact.component';
 import Products from './pages/products/products.component';
+import ProductDetail from './pages/product-detail/detail.component';
 import TestPage from './components/testpage/testpage';
 
 
@@ -27,7 +28,8 @@ function App() {
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route path='/contact' component={Contact} />
-            <Route path='/products' component={Products} />
+            <Route exact path='/products' component={Products} />
+            <Route path='/products/:id' component={ProductDetail} />
             {/* Protected Test Route Page */}
           </Switch>
         </Paper>
