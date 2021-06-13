@@ -1,0 +1,56 @@
+  Material Ui Breakpoints:
+        -https://material-ui.com/customization/breakpoints/#theme-breakpoints-up-key-media-query
+
+    Using multiple classes on Material UI "ClX":
+        -https://stackoverflow.com/questions/57557271/how-to-use-clsx-in-react
+
+    UserReducer:
+        - https://stackoverflow.com/questions/64547044/persist-localstorage-with-usereducer
+        - https://blog.webdevsimplified.com/2020-06/use-reducer/
+
+    Deep copying objects:
+        - https://javascript.plainenglish.io/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
+
+        - https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript
+
+        - https://stackoverflow.com/questions/47103028/how-to-use-object-spread-with-nested-properties
+    
+    Using react-cookies:
+        - https://rossbulat.medium.com/using-cookies-in-react-redux-and-react-router-4-f5f6079905dc
+        - https://www.tutorialspoint.com/how-to-set-cookies-in-reactjs
+
+    Adding google login:
+        - https://dev.to/sivaneshs/add-google-login-to-your-react-apps-in-10-mins-4del
+
+    Autocomplete:
+        - https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+
+    Login and signUp naming convention: 
+        - https://ux.stackexchange.com/questions/11936/when-to-use-join-register-or-sign-up
+
+    Email Regex:
+        - https://stackoverflow.com/questions/41348459/regex-in-react-email-validation
+        - https://www.itsolutionstuff.com/post/react-email-validation-exampleexample.html
+
+    Auth0:
+        Logout redirect:
+            - https://community.auth0.com/t/auth0-logout-without-redirect/8635/2
+            - https://auth0.com/docs/logout/log-users-out-of-auth0
+
+    Protected routes:
+        - https://ui.dev/react-router-v5-protected-routes-authentication/
+
+
+CSS:
+    Width 100vw:
+        - https://stackoverflow.com/questions/32351229/100vw-div-not-showing-full-width
+
+
+
+
+To implement Later:
+     
+     Form validation wih Formik:
+        - https://formik.org/docs/examples/with-material-ui
+
+
