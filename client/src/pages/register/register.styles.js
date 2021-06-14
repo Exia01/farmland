@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   formTitle: {},
+  formErrors: {},
   formHeaderLogo: {
     height: 'auto',
     maxHeight: '50px',

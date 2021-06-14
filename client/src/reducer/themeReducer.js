@@ -24,9 +24,7 @@ export const themeReducer = (state, action) => {
           type: updatedType,
         },
       };
-      console.log(updateThemePref);
       return updateThemePref;
-
     default:
       return state;
   }

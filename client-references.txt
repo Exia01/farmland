@@ -8,6 +8,9 @@
         - https://stackoverflow.com/questions/64547044/persist-localstorage-with-usereducer
         - https://blog.webdevsimplified.com/2020-06/use-reducer/
 
+    Destructuring props:
+        - https://stackoverflow.com/questions/46962269/destructuring-props-with-the-rest-properties
+
     Deep copying objects:
         - https://javascript.plainenglish.io/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089
 
@@ -18,10 +21,10 @@
     Using react-cookies:
         - https://rossbulat.medium.com/using-cookies-in-react-redux-and-react-router-4-f5f6079905dc
         - https://www.tutorialspoint.com/how-to-set-cookies-in-reactjs
-
-    Adding google login:
-        - https://dev.to/sivaneshs/add-google-login-to-your-react-apps-in-10-mins-4del
-
+    
+    Clean up useEffect:
+        - https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component
+        
     Autocomplete:
         - https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
 
@@ -32,6 +35,9 @@
         - https://stackoverflow.com/questions/41348459/regex-in-react-email-validation
         - https://www.itsolutionstuff.com/post/react-email-validation-exampleexample.html
 
+    Adding google login:
+        - https://dev.to/sivaneshs/add-google-login-to-your-react-apps-in-10-mins-4del
+
     Auth0:
         Logout redirect:
             - https://community.auth0.com/t/auth0-logout-without-redirect/8635/2
@@ -39,6 +45,9 @@
 
     Protected routes:
         - https://ui.dev/react-router-v5-protected-routes-authentication/
+
+
+        
 
 
 CSS:

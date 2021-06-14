@@ -4,21 +4,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    first: {
+    name: {
         type: String,
         trim: true, 
-        required:true,
     },
-    last: {
-        type: String,
-        trim: true,
-        required:true,
-    },
-    username: {
-        type: String,
-        trim: true,
-        required: "Username is Required"
-    },
+
     email: {
         type: String,
         trim: true,
@@ -30,6 +20,9 @@ const UserSchema = new Schema({
         type: String,
         required: "Password is Required",
         minlength: 5
+    },
+    role:{
+        type:String,
     },
     cartNumber: [
         {

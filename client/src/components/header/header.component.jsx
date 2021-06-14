@@ -48,7 +48,7 @@ export default function Header(props) {
       text: 'Shop Online',
       icon: <StorefrontIcon />,
       onClick: () => {
-        history.push('/shop');
+        history.push('/test');
         handleDrawerClose();
       },
     },
@@ -64,7 +64,7 @@ export default function Header(props) {
       text: 'Cart',
       icon: <ShoppingCartIcon />,
       onClick: () => {
-        history.push('/test');
+        history.push('/shop');
         handleDrawerClose();
       },
     },
