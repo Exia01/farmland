@@ -2,10 +2,12 @@ const { port, env } = require('./server/config/variables');
 const app = require('./server/config/express');
 const mongoose = require('./server/config/mongoose');
 const logger = require('./server/config/logger');
+
 const testCall = require('./server/utils/testAxiosCalls');
 // open mongoose connection
-mongoose.connect();
 
+
+mongoose.connect();
 // listen to requests
 // app.listen(port, () => console.log(`Server started on port ${port} ${env}`));
 
@@ -18,6 +20,5 @@ app.listen(port, () => logger.info(`server started on port ${port} (${env})`));
  */
 
 module.exports = app;
-
 
 // No need for bluebird:https://masteringjs.io/tutorials/fundamentals/bluebird

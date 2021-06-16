@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // Components
+import AuthProvider from './contexts/auth.context';
 
 // Material UI Baseline
 import { CssBaseline } from '@material-ui/core';
@@ -16,13 +17,15 @@ import CurrentThemeProvider from './contexts/theme.context';
 
 const app = (
   <BrowserRouter>
-      {/* <React.StrictMode> */}
-      <CssBaseline>
+    {/* <React.StrictMode> */}
+    <CssBaseline>
+      <AuthProvider>
         <CurrentThemeProvider>
           <App />
         </CurrentThemeProvider>
-      </CssBaseline>
-      {/* </React.StrictMode> */}
+      </AuthProvider>
+    </CssBaseline>
+    {/* </React.StrictMode> */}
   </BrowserRouter>
 );
 

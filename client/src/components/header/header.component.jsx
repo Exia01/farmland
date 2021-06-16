@@ -11,7 +11,6 @@ import logo from '../../uploads/images/icons/farmlandLogo3.png';
 import {
   AppBar,
   Toolbar,
-  Typography,
   IconButton,
   Container,
   Drawer,
@@ -49,7 +48,7 @@ export default function Header(props) {
       text: 'Shop Online',
       icon: <StorefrontIcon />,
       onClick: () => {
-        history.push('/shop');
+        history.push('/test');
         handleDrawerClose();
       },
     },
@@ -65,7 +64,7 @@ export default function Header(props) {
       text: 'Cart',
       icon: <ShoppingCartIcon />,
       onClick: () => {
-        history.push('/test');
+        history.push('/shop');
         handleDrawerClose();
       },
     },
@@ -73,13 +72,17 @@ export default function Header(props) {
 
   return (
     <>
-      <AppBar position='relative' title='Farmland' elevation={0} className={classes.headerBg}>
+      <AppBar
+        position='relative'
+        title='Farmland'
+        elevation={0}
+        className={`${classes.headerBg} header-container`}
+      >
         <Container type='div' className={classes.root}>
           <Toolbar>
             <div className={classes.titleContainer}>
               <Link to='/' className={classes.title}>
                 <img src={logo} alt='logo' />
-
               </Link>
             </div>
             <div className={classes.centerNavLinksContainer}>

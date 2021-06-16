@@ -1,0 +1,43 @@
+Comments:
+        - https://jsdoc.app/about-getting-started.html
+
+Loggers:
+    - https://www.loggly.com/ultimate-guide/node-logging-basics/
+    - Morgan: https://coralogix.com/log-analytics-blog/morgan-npm-logger-the-complete-guide/
+
+
+Express Json:
+    - https://medium.com/@mmajdanski/express-body-parser-and-why-may-not-need-it-335803cd048c
+
+
+Helmet:
+    - https://geshan.com.np/blog/2021/01/nodejs-express-helmet/
+
+dotenv-safe:
+    - https://www.npmjs.com/package/dotenv-safe
+
+Method override:
+    - https://www.npmjs.com/package/method-override
+
+Express Middlewares:
+    - https://expressjs.com/en/guide/using-middleware.html
+
+
+Mongoose
+    Why to implement exec:
+        - https://mongoosejs.com/docs/promises.html
+
+    Lean queries:
+        - https://mongoosejs.com/docs/tutorials/lean.html
+
+    unique prop:
+        - https://masteringjs.io/tutorials/mongoose/unique
+
+    Embedding or referencing:
+        -  https://www.oreilly.com/library/view/mongodb-applied-design/9781449340056/ch01.html
+    
+    Pull method: 
+        -   https://docs.mongodb.com/manual/reference/operator/update/pull/
+
+    Create Vs Save method: 
+        -   https://stackoverflow.com/questions/38290684/mongoose-save-vs-insert-vs-create/38291042
