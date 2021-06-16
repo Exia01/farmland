@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const jwtDecode = require('jwt-decode');
 
 const isAuthorized = (req, res, next) => {
   // Capture Token
@@ -19,7 +20,6 @@ const isAuthorized = (req, res, next) => {
   if (!verified) {
     return res.status(403).json({ msg: 'Token Failed, Authorization Denied' });
   }
-  console.log(verified);
 
   // Set User ID
   req.user = verified.id;
@@ -60,7 +60,7 @@ const createToken = (user) => {
       iss: '', //issuer
       aud: '', //audience,
     },
-    process.env.JWT_SECRET,
+    process.env.TOKEN_SECRET,
     { algorithm: 'HS256', expiresIn: '1h' }
   );
 };
@@ -69,22 +69,43 @@ const verifyPassword = (passwordAttempt, hashedPassword) => {
   return bcrypt.compare(passwordAttempt, hashedPassword);
 };
 
+const attachUser = (req, res, next) => {
+  const token = req.cookies.token;
+
+  if (!token) {
+    return res.status(401).json({ message: 'Authentication invalid' });
+  }
+
+
+  const decodedToken = jwtDecode(token);
+
+  if (!decodedToken) {
+    return res.status(401).json({
+      msg: 'There was a problem authorizing the request',
+    });
+  } else {
+    console.log('Decoded Token', decodedToken);
+    req.user = decodedToken;
+    next();
+  }
+};
+
 const requireAdmin = (req, res, next) => {
   if (!req.user) {
     return res.status(401).json({
-      message: 'There was a problem authorizing the request',
+      msg: 'There was a problem authorizing the request',
     });
   }
   if (req.user.role !== 'admin') {
-    return res.status(401).json({ message: 'Insufficient role' });
+    return res.status(401).json({ msg: 'Insufficient role' });
   }
   next();
 };
-
 
 module.exports = {
   isAuthorized,
   hashPassword,
   createToken,
   verifyPassword,
+  attachUser,
 };
