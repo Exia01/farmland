@@ -1,8 +1,8 @@
 const httpStatus = require('http-status');
 const Product = require('../models/product.model');
 const ProoductVariant = require('../models/productVariant.model');
-
 exports.index = async (req, res, next) => {
+  // console.log(req.user);
   try {
     const products = await Product.find({})
       .lean()
@@ -18,6 +18,8 @@ exports.index = async (req, res, next) => {
 
 exports.createProduct = async (req, res, next) => {
   try {
+    // if we wanted to use the user to tie into the product
+    const { sub } = req.user; //from attach user middleware
     const { name, description, price, listed, soldOut } = req.body;
     if (!name || !description || !price || !listed) {
       return res.status(400).json({ msg: 'Required field(s) missing' });
