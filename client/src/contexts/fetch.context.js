@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
 import axios from 'axios';
 import { AuthContext } from './auth.context';
 
@@ -6,21 +6,32 @@ const FetchContext = createContext();
 const { Provider } = FetchContext;
 
 const FetchProvider = ({ children }) => {
-  const authContext = useContext(AuthContext);
-
   const authAxios = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
   });
 
-  authAxios.interceptors.request.use(
-    (config) => {
-      config.headers.Authorization = `Bearer ${authContext.authState.token}`;
-      return config;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
-  );
+  useEffect(() => {
+    const getCsrfToken = async () => {
+      try {
+        const { data } = await authAxios.get('csrf-token');
+        console.log(data);
+        authAxios.defaults.headers['x-csrf-token'] = data.csrfToken
+      } catch (error) {
+        console.log(error, 'error fetching for csrf cookie');
+      }
+    };
+    // getCsrfToken();
+    return () => {};
+  }, []);
+  // authAxios.interceptors.request.use(
+  //   (config) => {
+  //     config.headers.Authorization = `Bearer ${authStateObj.authState.token}`;
+  //     return config;
+  //   },
+  //   (error) => {
+  //     return Promise.reject(error);
+  //   }
+  // );
 
   authAxios.interceptors.response.use(
     (response) => {
