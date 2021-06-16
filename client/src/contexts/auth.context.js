@@ -7,28 +7,25 @@ const { Provider } = AuthContext;
 
 const initializer = () => {
   const initialState = {
-    token: '',
-    expiresAt: '',
-    userInfo: {},
+    token: null,
+    expiresAt: JSON.parse(localStorage.getItem('expiresAt')) || '',
+    userInfo: JSON.parse(localStorage.getItem('userInfo')) || {},
+    loggedIn: null,
   };
 
-  return JSON.parse(localStorage.getItem('localAuthState')) || initialState;
-
-  // Could also separate if preferable
-  // const token = localStorage.getItem('token');
-  // const userInfo = localStorage.getItem('userInfo');
-  // const expiresAt = localStorage.getItem('expiresAt');
+  return initialState;
 };
 const AuthProvider = ({ children }) => {
   const [authState, dispatch] = useReducer(userReducer, {}, initializer);
 
   useEffect(() => {
-    localStorage.setItem('localAuthState', JSON.stringify(authState));
+    localStorage.setItem('expiresAt', JSON.stringify(authState.expiresAt));
+    localStorage.setItem('userInfo', JSON.stringify(authState.userInfo));
   }, [authState]);
 
   const isAuthenticated = () => {
     //if properties aren't present
-    if (!authState.token || !authState.expiresAt) {
+    if (!authState.expiresAt) {
       return false;
     }
 
