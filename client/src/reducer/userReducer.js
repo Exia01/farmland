@@ -17,6 +17,11 @@ export const userReducer = (state, action) => {
         expiresAt,
       };
       return updatedState;
+    case 'VERIFY_LOGIN':
+      return {
+        ...state,
+        loggedIn: action.payload,
+      };
     default:
       return state;
   }
@@ -27,9 +32,20 @@ export const login = (authState) => ({
   type: 'LOGIN',
   payload: authState,
 });
+
 export const logout = (authState) => ({
   type: 'LOGOUT',
   payload: authState,
+});
+
+export const verifyLogin = (authState) => ({
+  type: 'VERIFY_LOGIN',
+  payload: authState,
+});
+
+export const setToken = (token) => ({
+  type: 'SET_TOKEN',
+  payload: token,
 });
 
 export const UserActionTypes = {
