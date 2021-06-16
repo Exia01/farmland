@@ -30,7 +30,7 @@ export default function Login() {
     passwordCheck: '',
   });
 
-  const [formErrors, setformErrors] = useState({
+  const [formErrors, setFormErrors] = useState({
     email: '',
     password: '',
   });
@@ -54,7 +54,7 @@ export default function Login() {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    setformErrors({
+    setFormErrors({
       email: '',
       password: '',
     });
@@ -80,7 +80,7 @@ export default function Login() {
     }
 
     if (!formIsValid) {
-      setformErrors(formErrors);
+      setFormErrors(formErrors);
       return;
     }
 
@@ -90,20 +90,15 @@ export default function Login() {
 
       dispatch({ type: 'LOGIN', payload: data });
 
-      if (isMounted) {
-        setFormData({ name: '', email: '', password: '', passwordCheck: '' });
-        setformErrors({
-          name: '',
-          email: '',
-          password: '',
-          passwordCheck: '',
-        });
-      }
+      //could set login successful message
 
+      //could set timeout for message to be displayed before redirecting
       setRedirectOnLogin(true);
     } catch (err) {
       console.log(err);
       //can set errors to display on client if needed
+
+      //reset successful login message
     }
   };
 
@@ -115,7 +110,6 @@ export default function Login() {
   }, [formData, formErrors]);
 
   const { email, password } = formData;
-  console.log(redirectOnLogin);
   return (
     <>
       {redirectOnLogin && <Redirect to='/' />}

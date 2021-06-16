@@ -105,17 +105,15 @@ export default function Register() {
       const { data } = await axios.post('/v1/user', formData);
 
       dispatch({ type: 'LOGIN', payload: data });
-      setFormData({ name: '', email: '', password: '', passwordCheck: '' });
-      setformErrors({
-        name: '',
-        email: '',
-        password: '',
-        passwordCheck: '',
-      });
+      //could set login successful message
+
+      //could set timeout for message to be displayed before redirecting
       setRedirectOnLogin(true);
     } catch (err) {
       console.log(err.msg);
       //can set errors to display on client if needed
+
+      //reset successful login message
     }
   };
 
