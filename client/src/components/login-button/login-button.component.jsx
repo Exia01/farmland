@@ -1,13 +1,16 @@
 // Material UI
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function LoginButton() {
-  function onClickHandler() {}
+  const history = useHistory();
+  function onClickHandler() {
+    history.push('/login');
+  }
 
   return (
-    <Typography variant='button'>
-      <Link to='/Login'>Login</Link>
+    <Typography variant='button' onClick={onClickHandler}>
+      Login
     </Typography>
   );
 }

@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
   rightLinksContainer: {
     display: 'flex',
     flex: '0 25%',
+    '& a': {
+      textDecoration: 'none',
+    },
   },
 
   menuButton: {
