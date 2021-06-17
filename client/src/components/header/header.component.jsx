@@ -140,7 +140,12 @@ export default function Header(props) {
             );
           })}
 
-          <ListItem button>
+          <ListItem
+            button
+            onClick={() => {
+              handleDrawerClose();
+            }}
+          >
             <AuthContainer />
           </ListItem>
           {/* <ListItem key='loginNavBtn'>
