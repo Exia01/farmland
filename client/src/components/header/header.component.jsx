@@ -48,7 +48,7 @@ export default function Header(props) {
       text: 'Shop Online',
       icon: <StorefrontIcon />,
       onClick: () => {
-        history.push('/test');
+        history.push('/products');
         handleDrawerClose();
       },
     },
@@ -86,7 +86,7 @@ export default function Header(props) {
               </Link>
             </div>
             <div className={classes.centerNavLinksContainer}>
-              <Link to='/test' className={classes.centerNavLinks}>
+              <Link to='/products' className={classes.centerNavLinks}>
                 Shop Online
               </Link>
               <Link to='/contact' className={classes.centerNavLinks}>

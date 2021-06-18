@@ -11,6 +11,9 @@ import Header from './components/header/header.component';
 import Login from './pages/login/login.component';
 import Register from './pages/register/register.component';
 import DummyPage from './pages/dummy.component..jsx';
+import Contact from './pages/contact/contact.component';
+import Products from './pages/products/products.component';
+import ProductDetail from './pages/product-detail/detail.component';
 
 // Css
 import './App.css';
@@ -90,7 +93,10 @@ function App() {
             <Switch>
               <Route exact path='/' component={HomePage} />
               <Route exact path='/login' component={Login} />
+              <Route path='/contact' component={Contact} />
               <Route exact path='/register' component={Register} />
+              <Route exact path='/products' component={Products} />
+              <Route path='/products/:id' component={ProductDetail} />
               <AuthenticatedRoute exact path='/test'>
                 <DummyPage />
               </AuthenticatedRoute>
