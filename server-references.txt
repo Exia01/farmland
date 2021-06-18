@@ -23,6 +23,14 @@ Express Middlewares:
     - https://expressjs.com/en/guide/using-middleware.html
 
 
+Promise, Promise all implementation:
+    - https://www.digitalocean.com/community/tutorials/js-async-functions
+
+Cookies:
+    - https://alligator.io/nodejs/express-cookies/
+
+
+
 Mongoose
     Why to implement exec:
         - https://mongoosejs.com/docs/promises.html

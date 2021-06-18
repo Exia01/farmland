@@ -80,7 +80,11 @@ exports.createUser = async (req, res, next) => {
       };
 
       //tell express to include cookie
-      res.cookie('token', token, { httpOnly: true });
+      res.cookie(
+        'token',
+        token,
+        { httpOnly: true, expires: new Date(Date.now() + 8 * 3600000) } // cookie will be removed after 8 hours},
+      );
       // Send JSON response
       return res.status(200).json({
         msg: 'User created!',
