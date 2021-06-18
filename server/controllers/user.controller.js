@@ -59,9 +59,7 @@ exports.createUser = async (req, res, next) => {
     // User Email already exists in database (?)
     const userExists = await User.findOne({ email: userData.email }).lean();
     if (userExists) {
-      return res
-        .status(400)
-        .json({ errors: [{ msg: 'User already exists!' }] });
+      return res.status(400).json({ msg: 'User already exists!' });
     }
 
     const newUser = new User(userData);
@@ -147,10 +145,10 @@ exports.loginUser = async (req, res, next) => {
   } catch (err) {
     let errMsg = err.stack;
     let message = 'Could not complete request';
+    console.log(errMsg);
     res.status(500).json({ msg: message, errMsg });
   }
 };
-
 
 // // @@ VERIFICATION ROUTE
 // // @@
@@ -170,9 +168,7 @@ exports.verifyToken = async (req, res, next) => {
     if (!verified) return res.json(false);
 
     // -- Valid User (?)
-    const user = await User.findById({ _id: verified.user._id })
-      .lean()
-      .exec();
+    const user = await User.findById({ _id: verified.user._id }).lean().exec();
 
     console.log(user);
     if (!user) return res.json(false);
