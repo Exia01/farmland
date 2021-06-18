@@ -22,6 +22,7 @@ import ThemeToggle from '../../components/theme-toggle/theme-toggle.component';
 export default function Register() {
   const classes = useStyles();
   const dispatch = useContext(AuthDispatchContext);
+  const [registerError, setRegisterError] = useState('');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -60,6 +61,7 @@ export default function Register() {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
+    setRegisterError(null);
     setformErrors({
       name: '',
       email: '',
@@ -110,7 +112,7 @@ export default function Register() {
       //could set timeout for message to be displayed before redirecting
       setRedirectOnLogin(true);
     } catch (err) {
-      console.log(err.msg);
+      setRegisterError(err.response.data.msg);
       //can set errors to display on client if needed
 
       //reset successful login message
@@ -158,6 +160,15 @@ export default function Register() {
                 </div>
               </div>
               <div className={classes.formContainer}>
+                {registerError && (
+                  <Typography
+                    variant='body1'
+                    component='p'
+                    className={classes.registerError}
+                  >
+                    {registerError}
+                  </Typography>
+                )}
                 <form
                   className={classes.form}
                   noValidate

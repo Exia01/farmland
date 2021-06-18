@@ -65,6 +65,10 @@ const useStyles = makeStyles((theme) => ({
       '& .MuiOutlinedInput-notchedOutline': {},
     },
   },
+  registerError: {
+    color: theme.palette.error.main,
+    fontWeight: 'bold',
+  },
   submitBtn: {
     marginTop: '16px',
     padding: '.5rem',

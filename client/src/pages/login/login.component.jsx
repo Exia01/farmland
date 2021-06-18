@@ -23,6 +23,7 @@ export default function Login() {
   const classes = useStyles();
   const dispatch = useContext(AuthDispatchContext);
   const [isMounted, setIsMounted] = useState();
+  const [loginError, setLoginError] = useState('');
 
   const [formData, setFormData] = useState({
     email: '',
@@ -35,7 +36,6 @@ export default function Login() {
     password: '',
   });
   const [redirectOnLogin, setRedirectOnLogin] = useState(false);
-  const [apiMessage, setapiMessage] = useState('');
 
   const isEmail = (val) => {
     var pattern = new RegExp(
@@ -63,6 +63,7 @@ export default function Login() {
 
     const { email, password } = formData;
 
+    setLoginError(null);
     const formErrors = {
       email: '',
       password: '',
@@ -90,14 +91,12 @@ export default function Login() {
 
       dispatch({ type: 'LOGIN', payload: data });
 
-      //could set login successful message
-
       //could set timeout for message to be displayed before redirecting
       setRedirectOnLogin(true);
     } catch (err) {
-      console.log(err);
-      //can set errors to display on client if needed
-
+      // console.log('Error', err.response);
+      console.log('Error', err);
+      setLoginError(err.response.data.msg);
       //reset successful login message
     }
   };
@@ -131,22 +130,21 @@ export default function Login() {
                   <Typography variant='body2' component='p'>
                     Access your order history
                   </Typography>
-
-                  {apiMessage && (
-                    <Typography
-                      variant='body2'
-                      component='p'
-                      className={classes.formErrors}
-                    >
-                      {apiMessage}
-                    </Typography>
-                  )}
                 </div>
                 <div className={classes.formHeaderLogo}>
                   <ThemeToggle />
                 </div>
               </div>
               <div className={classes.formContainer}>
+                {loginError && (
+                  <Typography
+                    variant='body1'
+                    component='p'
+                    className={classes.loginError}
+                  >
+                    {loginError}
+                  </Typography>
+                )}
                 <form
                   className={classes.form}
                   noValidate
