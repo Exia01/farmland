@@ -14,6 +14,7 @@ import DummyPage from './pages/dummy.component..jsx';
 import Contact from './pages/contact/contact.component';
 import Products from './pages/products/products.component';
 import ProductDetail from './pages/product-detail/detail.component';
+import BottomNavigationFooter from './components/bottom-navigation-footer/bottom-navigation-footer.component';
 
 // Css
 import './App.css';
@@ -106,6 +107,7 @@ function App() {
                 <h1>404</h1>
               </Route>
             </Switch>
+            <BottomNavigationFooter />
           </Paper>
         </ThemeProvider>
       </FetchProvider>
