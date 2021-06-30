@@ -18,9 +18,9 @@ export default function CurrentThemeProvider(props) {
         contrastText: '#fff',
       },
       secondary: {
-        light: '#5c544d',
-        main: '#342A21',
-        dark: '#241d17',
+        light: '#e3d3c4',
+        main: '#DCC9B6',
+        dark: '#9a8c7f',
         contrastText: '#000',
       },
     },
