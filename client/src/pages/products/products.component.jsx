@@ -25,7 +25,7 @@ const Products = () => {
   }, []);
 
   return (
-    <Container>
+    <Container >
       <Grid container spacing={3} >
         <Grid item xs={12} sm={6} md={4} spacing={3}>
           <ProductCard />
