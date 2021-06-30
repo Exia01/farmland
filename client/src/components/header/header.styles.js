@@ -3,9 +3,21 @@ import { DRAWER_WIDTH } from '../../utils/constants';
 const drawerWidth = DRAWER_WIDTH; //using constant
 const useStyles = makeStyles((theme) => ({
   headerBg: {
-    background: theme.palette.type === 'light' ? 'white' : '#424242 ',
+    background:
+      theme.palette.type === 'light'
+        ? theme.palette.background.paper
+        : '#424242 ',
+
+    // 6-30-21 -Added, can be removed
+    borderBottom: '1px solid;',
+    borderBottomColor: theme.palette.background.default,
+    padding: '8px 0',
+    marginBottom: '.5rem',
   },
   root: {
+    '& .MuiToolbar-regular': {
+      minHeight: '100px',
+    },
     flexGrow: 1,
     // '& div div': {
     //   flex: '0 auto',
