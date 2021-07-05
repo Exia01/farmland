@@ -1,5 +1,6 @@
 // Material Ui
-import { Container, Grid, Typography } from '@material-ui/core';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
+import LogoutButton from '../../components/logout-button/logout-button.component';
 
 //styles
 import styles from './account.module.css';
@@ -9,15 +10,30 @@ function Account() {
     <Container>
       <Grid container justify='center' className={styles.gridContainer}>
         <Grid item xs={12} container justify='center'>
-          <Typography variant='h4' gutterBottom>
-            My Account
-          </Typography>
+          <Grid item className={styles.titleContainer}>
+            <Typography variant='h3' gutterBottom>
+              My Account
+            </Typography>
+          </Grid>
+          <Grid item className={styles.logoutContainer} xs={12}>
+            <LogoutButton accountBtn />
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={6} className={styles.orderContainer}>
-          Order History
+        <Grid item xs={12} sm={6} className={styles.orderContainer} container>
+          <Typography variant='h4' className={styles.sectionTitle}>
+            Order History
+          </Typography>
+          <Grid item xs={12}>
+            <Typography variant='body1'>
+              You haven't placed any orders yet.
+            </Typography>
+          </Grid>
         </Grid>
         <Grid item xs={12} sm={6} className={styles.accountDetailsContainer}>
-          Account Details
+          <Typography variant='h4' className={styles.sectionTitle}>
+            Account Details
+          </Typography>
+          <Typography variant='body1'>Jose Gonzalez</Typography>
         </Grid>
       </Grid>
     </Container>

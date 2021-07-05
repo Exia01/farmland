@@ -1,3 +1,24 @@
 .gridContainer {
   margin-top: 1rem;
 }
+
+.titleContainer {
+  margin-bottom: 16px;
+}
+
+.logoutContainer {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.orderContainer {
+}
+.accountDetailsContainer {
+}
+.accountDetailsContainer .sectionTitle,
+.accountDetailsContainer .sectionTitle + p {
+  opacity: 0.8;
+}
+
+.gridContainer .sectionTitle {
+  margin-bottom: 1rem;
+}
