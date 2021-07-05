@@ -20,14 +20,14 @@ export default function BottomNavigationFooter() {
 
   const [pathMap, setPathMap] = useState([
     '/',
-    '/shop',
+    '/products',
     '/login',
     '/account',
     '/register',
   ]);
   const [pathMapObj, setPathMapObj] = useState({
     '/': 0,
-    '/shop': 1,
+    '/products': 1,
     // 'cart',
     '/login': 2,
     '/account': 2,
