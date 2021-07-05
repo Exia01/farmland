@@ -99,11 +99,10 @@ function App() {
               <Route exact path='/register' component={Register} />
               <Route exact path='/products' component={Products} />
               <Route path='/products/:id' component={ProductDetail} />
-              <Route path='/account' component={Account} />
               <AuthenticatedRoute exact path='/test'>
                 <DummyPage />
               </AuthenticatedRoute>
-              <AuthenticatedRoute exact path='/account-v2'>
+              <AuthenticatedRoute exact path='/account'>
                 <Account />
               </AuthenticatedRoute>
               <Route exact path='/shop' component={DummyPage} />
