@@ -68,3 +68,8 @@ To implement Later:
         - https://www.digitalocean.com/community/tutorials/react-keep-react-fast
 
 
+
+
+Misc: 
+    - Boolean Objs:
+        - https://www.javascripttutorial.net/javascript-boolean/
