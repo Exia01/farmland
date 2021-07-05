@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import ThemeToggle from '../theme-toggle/theme-toggle.component';
 import AuthContainer from '../auth-container/auth-container.component';
+import HeaderAccountContainer from '../header-account-container/header-account-container.component';
 
 // Logo
 import logo from '../../uploads/images/icons/farmlandLogo3.png';
@@ -95,7 +96,9 @@ export default function Header(props) {
             </div>
             <div className={classes.rightLinksContainer}>
               <ThemeToggle />
-              <AuthContainer navIcon={true} />
+
+              <HeaderAccountContainer />
+              {/* <AuthContainer navIcon={true} /> */}
               <IconButton aria-label='shopping Cart' color='inherit'>
                 <ShoppingCartIcon />
               </IconButton>
