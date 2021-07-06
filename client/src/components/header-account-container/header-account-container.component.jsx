@@ -78,6 +78,7 @@ export default function HeaderAccountContainer() {
         aria-haspopup='true'
         onClick={onClickHandler}
         color='inherit'
+        className={classes.wrapper}
       >
         <AccountCircle />
       </IconButton>
