@@ -52,6 +52,7 @@ Protected routes:
 CSS:
     Width 100vw:
         - https://stackoverflow.com/questions/32351229/100vw-div-not-showing-full-width
+        - https://stackoverflow.com/questions/45371811/how-to-set-child-div-with-100vw-of-device-width-when-parent-div-having-width-80
 
     Font stacking:
         - https://www.digitalocean.com/community/tutorials/css-system-font-stack
