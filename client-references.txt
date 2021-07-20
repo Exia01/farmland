@@ -52,6 +52,7 @@ Protected routes:
 CSS:
     Width 100vw:
         - https://stackoverflow.com/questions/32351229/100vw-div-not-showing-full-width
+        - https://stackoverflow.com/questions/41385443/css-width-100vw-only-extending-to-one-side
 
     Font stacking:
         - https://www.digitalocean.com/community/tutorials/css-system-font-stack
@@ -66,6 +67,9 @@ To implement Later:
 
     Improve Performance:
         - https://www.digitalocean.com/community/tutorials/react-keep-react-fast
+
+    QuillJs for creating products:
+        - https://quilljs.com/docs/api/#content
 
 
 
