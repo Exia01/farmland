@@ -167,19 +167,20 @@ exports.verifyToken = async (req, res, next) => {
 
     // -- Verify Token
     const verified = jwt.verify(cookie, process.env.TOKEN_SECRET);
-    console.log('verified', verified);
+    // console.log('verified', verified);
 
     if (!verified) return res.json(false);
 
     // -- Valid User (?)
     const user = await User.findById({ _id: verified.user._id }).lean().exec();
 
-    console.log(user);
+    // console.log(user);
     if (!user) return res.json(false);
 
     // -- Return TRUE if valid token || to WHERE ??
     return res.json(true);
   } catch (err) {
+    console.log(err.stack);
     console.log(err);
     return res.status(400).json(false);
   }
