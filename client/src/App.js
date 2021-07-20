@@ -4,6 +4,7 @@ import { FetchProvider } from './contexts/fetch.context';
 import { useContext, useEffect } from 'react';
 import { AuthContext, AuthDispatchContext } from './contexts/auth.context';
 import axios from 'axios';
+import CreateProduct from './pages/create-product/create-product.component';
 
 // Components
 import HomePage from './pages/homepage/homepage.component';
@@ -104,6 +105,9 @@ function App() {
               </AuthenticatedRoute>
               <AuthenticatedRoute exact path='/account'>
                 <Account />
+              </AuthenticatedRoute>
+              <AuthenticatedRoute exact path='/addproduct'>
+                <CreateProduct />
               </AuthenticatedRoute>
               <Route exact path='/shop' component={DummyPage} />
               {/* <AppRoutes /> */}

@@ -102,6 +102,9 @@ export default function HeaderAccountContainer() {
         <MenuItem onClick={handleClose}>
           <Link to='/account'>My Account</Link>
         </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to='/addproduct'>Add Product</Link>
+        </MenuItem>
       </Menu>
     </>
   );
