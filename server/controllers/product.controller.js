@@ -18,10 +18,13 @@ exports.index = async (req, res, next) => {
 
 exports.createProduct = async (req, res, next) => {
   try {
+    req.body.price = 9.99;
+    req.body.soldOut = false;
     // if we wanted to use the user to tie into the product
-    const { sub } = req.user; //from attach user middleware
-    const { name, description, price, listed, soldOut } = req.body;
-    if (!name || !description || !price || !listed) {
+    // const { sub } = req.user; //from attach user middleware
+    console.log(req.body);
+    const { name, description, department, price, listed, soldOut } = req.body;
+    if (!name || !description) {
       return res.status(400).json({ msg: 'Required field(s) missing' });
     }
     // Check if product already exist
@@ -34,6 +37,7 @@ exports.createProduct = async (req, res, next) => {
     const newProduct = new Product({
       name,
       description,
+      department,
       price,
       listed,
       soldOut,
@@ -45,8 +49,8 @@ exports.createProduct = async (req, res, next) => {
     return res.json({ product: savedProduct });
   } catch (err) {
     let errMsg = err.stack;
-    let message = 'Could not complete request';
-    res.status(500).json({ msg: message, errMsg });
+    let msg = 'Could not complete request';
+    res.status(500).json({ msg, errMsg });
   }
 };
 
