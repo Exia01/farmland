@@ -33,13 +33,16 @@ const ProductSchema = new Schema(
     // },
     listed: {
       type: Boolean,
-      required: [true, 'Product listing is required'],
     },
-    isAvailable: {
-      type: Boolean,
-    },
+    // isAvailable: {
+    //   type: Boolean,
+    // },
     productVariants: [{ type: Schema.Types.ObjectId, ref: 'product-variants' }],
     //image or images
+    //can be removed later
+    price: {
+      type: Number,
+    },
   },
   {
     timestamps: true,
@@ -47,5 +50,3 @@ const ProductSchema = new Schema(
 );
 
 module.exports = Product = mongoose.model('product', ProductSchema);
-
-
