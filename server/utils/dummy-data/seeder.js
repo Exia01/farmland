@@ -1,0 +1,82 @@
+/* Seeder Script */
+// require the necessary libraries
+
+const data = require('../../utils/dummy-data/seed');
+const MongoClient = require('mongodb').MongoClient;
+
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+async function seedDB() {
+  console.log('hello??');
+  // Connection URL
+  const uri =
+    'mongodb+srv://jgonzalez:FhkS1123@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
+
+  console.log('hello??1');
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    // useUnifiedTopology: true,
+  });
+  console.log('hello??2');
+  try {
+    console.log('hello??3');
+    await client.connect();
+    console.log('Connected correctly to server');
+
+    const collection = await client.db('farmland').collection('products');
+    console.log('hello??4');
+    console.log(collection);
+    // The drop() command destroys all data from a collection.
+    // Make sure you run it against proper database and collection.
+    collection.drop();
+
+    collection.insertMany(data);
+
+    console.log('Database seeded! :)');
+    client.close();
+  } catch (err) {
+    console.log(err.stack);
+    console.log(err);
+  }
+}
+
+// seedDB();
+
+async function test() {
+  const uri =
+    'mongodb+srv://jgonzalez:FhkS1123@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
+  const client = new MongoClient(uri, { useNewUrlParser: true });
+  try {
+    await client.connect();
+
+    const collection = await client.db('farmland').collection('products');
+
+    const [dropConfirmation, insertData] = await Promise.all([
+      collection.drop(),
+      collection.insertMany(data),
+    ]);
+    // The drop() command destroys all data from a collection.
+    // Make sure you run it against proper database and collection.
+    // const dropped = await collection.drop();
+    // console.log(dropped);
+
+    console.log('Database seeded! :)');
+    client.close();
+  } catch (err) {
+    console.log(err.stack);
+    console.log(err);
+    process.exit(-1);
+  }
+
+  //   client.connect((err) => {
+  //     // const collection = client.db("farmland").collection("devices");
+  //     // perform actions on the collection object
+  //     console.log('testing');
+  //     client.close();
+  //     console.log('connectionClosed');
+  //   });
+}
+test();

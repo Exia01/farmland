@@ -49,3 +49,7 @@ Mongoose
 
     Create Vs Save method: 
         -   https://stackoverflow.com/questions/38290684/mongoose-save-vs-insert-vs-create/38291042
+
+    Seed DB:
+        - https://medium.com/@tayot51/seed-mongodb-mongoose-seed-378d7c0122d3
+        - https://developer.mongodb.com/how-to/seed-database-with-fake-data/
