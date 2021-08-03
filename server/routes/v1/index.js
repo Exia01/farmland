@@ -13,27 +13,25 @@ router.use((req, res, next) => {
   next();
 });
 
+router.use('/messages', messageRoutes);
 /**
  * GET v1/status
  */
 router.get('/csrf-token', (req, res, next) => {
   //middleware setups this token on the req.
-  return res.status(200).json({ csrfToken:req.csrfToken() });
+  return res.status(200).json({ csrfToken: req.csrfToken() });
 });
 router.use('/user', userRoutes);
 router.get('/status', (req, res) => res.status(200).send('OK'));
 
-
-// router.use(attachUser);
+// Will check for user before reaching any of the routes below
+router.use(attachUser);
 /**
  * GET messages for auth test
  */
 router.use('/products', productRoutes);
 router.use('/products/:product_id/variants', productVariantRoutes);
 router.use('/variants', productVariantRoutes);
-
-
-router.use('/messages', messageRoutes);
 
 // If no API routes are hit, send the React app...Not implemented yet
 // router.use("*", (req, res) => res.sendFile(path.join(__dirname, "../client/build/index.html")));
