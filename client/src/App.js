@@ -22,23 +22,46 @@ import Account from './pages/account/account.component';
 import './App.css';
 // Material Ui
 import { Paper, ThemeProvider } from '@material-ui/core';
+import { ProductDispatchContext } from './contexts/product.context';
+import { updateCollections } from './reducer/productReducer';
 
 function App() {
   const theme = useContext(ThemeContext);
   const authContextObj = useContext(AuthContext);
   const dispatch = useContext(AuthDispatchContext);
+  const productDispatch = useContext(ProductDispatchContext);
+
+  // Auth useEffect In case we want to check via api route if it is logged in
   useEffect(() => {
-    async function getLoggedIn() {
+    // async function getLoggedIn() {
+    //   try {
+    //     const data = await axios.get('/v1/user/verify-token');
+    //     dispatch({ type: 'VERIFY_LOGIN', payload: data });
+    //   } catch (error) {
+    //     console.log('getLoggedIn Error', error);
+    //     dispatch({ type: 'VERIFY_LOGIN', payload: false });
+    //   }
+    // }
+    // getLoggedIn();
+    return () => {};
+  }, []);
+
+  // Products useEffect
+
+  useEffect(() => {
+    async function getProducts() {
       try {
-        const data = await axios.get('/v1/user/verify-token');
-        dispatch({ type: 'VERIFY_LOGIN', payload: data });
-      } catch (error) {
-        console.log('getLoggedIn Error', error);
-        dispatch({ type: 'VERIFY_LOGIN', payload: false });
+        const res = await axios.get('/v1/products');
+        productDispatch(updateCollections(res.data));
+      } catch (err) {
+        console.log('getProductsError', err);
       }
     }
-    getLoggedIn();
-    return () => {};
+    getProducts();
+    console.log('Testing UseEffect');
+    return () => {
+      //cleanup
+    };
   }, []);
 
   const AuthenticatedRoute = ({ children, ...rest }) => {
