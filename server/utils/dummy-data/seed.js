@@ -1,7 +1,7 @@
 const data = [
   {
     thumbnail: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
-    productVariants: '[]',
+    productVariants: [],
     name: 'Kiwis',
     description: 'Fresh chilean kiwis',
     listed: 'true',
@@ -9,7 +9,7 @@ const data = [
   },
   {
     thumbnail: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
-    productVariants: '[]',
+    productVariants: [],
     name: 'Strawberries',
     description: 'Farm fresh. Local whe',
     listed: 'true',
@@ -17,7 +17,7 @@ const data = [
   },
   {
     thumbnail: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
-    productVariants: '[]',
+    productVariants: [],
     name: 'Blueberries are a delicious snack for the entire family, any time of day. Enjoy them sprinkled over cereal, oatmeal or granola as part of a healthy breakfast. ',
     description: 'Fresh chilean kiwis',
     listed: 'true',
@@ -25,7 +25,7 @@ const data = [
   },
   {
     thumbnail: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
-    productVariants: '[]',
+    productVariants: [],
     name: 'Cherries',
     description: 'These cherries are a good source of dietary fiber',
     listed: 'true',
@@ -33,7 +33,7 @@ const data = [
   },
   {
     thumbnail: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
-    productVariants: '[]',
+    productVariants: [],
     name: 'Tomatoes',
     description:
       'These ripe tomatoes are the perfect ingredient for a variety of tasty dishes. Use them to make a decadent tomato sauce for a pasta dish; try slicing them up and pairing with mozzarella cheese, basil and balsamic vinegar; or simply enjoy them on their own as a nutritious snack.',
@@ -42,7 +42,7 @@ const data = [
   },
   {
     thumbnail: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
-    productVariants: '[]',
+    productVariants: [],
     name: 'Cucumbers',
     description: 'Organically grown in the richest soil available.',
     listed: 'true',
@@ -50,7 +50,7 @@ const data = [
   },
   {
     thumbnail: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
-    productVariants: '[]',
+    productVariants: [],
     name: 'Rice',
     description:
       'Organically grown in the richest soil available. No pesticides nor herbicides were used in producing these fine grains',
