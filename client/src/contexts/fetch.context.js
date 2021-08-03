@@ -14,7 +14,7 @@ const FetchProvider = ({ children }) => {
     const getCsrfToken = async () => {
       try {
         const { data } = await authAxios.get('csrf-token');
-        console.log(data);
+        // console.log(data);
         authAxios.defaults.headers['x-csrf-token'] = data.csrfToken
       } catch (error) {
         console.log(error, 'error fetching for csrf cookie');

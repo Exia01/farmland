@@ -49,7 +49,7 @@ export default function BottomNavigationFooter() {
       const { pathname } = location;
 
       const value = pathMapObj[pathname.toLocaleLowerCase()]
-      console.log(value);
+      // console.log(value);
       if (value > -1) {
         setValue(value);
       }
