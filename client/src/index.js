@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // Components
-import AuthProvider from './contexts/auth.context';
 
 // Material UI Baseline
 import { CssBaseline } from '@material-ui/core';
@@ -14,6 +13,8 @@ import './index.css';
 
 // Contexts
 import CurrentThemeProvider from './contexts/theme.context';
+import AuthProvider from './contexts/auth.context';
+import  ProductProvider from './contexts/product.context';
 
 const app = (
   <BrowserRouter>
@@ -21,7 +22,9 @@ const app = (
     <CssBaseline>
       <AuthProvider>
         <CurrentThemeProvider>
-          <App />
+          <ProductProvider>
+            <App />
+          </ProductProvider>
         </CurrentThemeProvider>
       </AuthProvider>
     </CssBaseline>
