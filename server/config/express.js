@@ -16,15 +16,16 @@ app.use(helmet());
 app.use(express.json()); //Used to parse JSON bodies
 app.use(express.urlencoded({ extended: false })); //Parse URL-encoded bodies??
 
-// const csrfProtection = csrf({
-//   cookie: true,
-//   //tells the middleware to use double submit cookie pattern
-// });
+const csrfProtection = csrf({
+  cookie: true,
+  //tells the middleware to use double submit cookie pattern
+});
 
 // lets you use HTTP verbs such as PUT or DELETE
 // in places where the client doesn't support it
 app.use(methodOverride());
 app.use(cookieParser());
+//will need to have some sort of way of getting it from the from on the context
 // app.use(csrfProtection);
 // enable CORS - Cross Origin Resource Sharing --> May need this?
 // app.use(cors());
