@@ -46,6 +46,9 @@ Auth0:
 Protected routes:
     - https://ui.dev/react-router-v5-protected-routes-authentication/
     - https://ui.dev/react-router-v5-protected-routes-authentication/
+
+random select:
+    - https://stackoverflow.com/questions/19269545/how-to-get-a-number-of-random-elements-from-an-array
     
 
 
@@ -59,6 +62,9 @@ CSS:
     Font stacking:
         - https://www.digitalocean.com/community/tutorials/css-system-font-stack
 
+    Image alignment:
+        - https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
+        - https://stackoverflow.com/questions/8522047/why-is-this-container-div-taller-than-required-to-wrap-the-image-it-contains
 
 
 
