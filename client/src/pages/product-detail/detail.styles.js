@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
   productImage: {
     maxHeight: 500,
     width: '100%',
+    objectFit: 'contain',
   },
   sideCol: {},
   hrDivider: { margin: '1rem 0' },
