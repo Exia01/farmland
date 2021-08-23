@@ -13,9 +13,10 @@ async function seedDB() {
   console.log('hello??');
   // Connection URL
   const uri =
-    'mongodb+srv://jgonzalez:FhkS1123@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
+    'mongodb+srv://jgonzalez:sjfJPtyk23@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
 
   console.log('hello??1');
+  console.log(uri);
   const client = new MongoClient(uri, {
     useNewUrlParser: true,
     // useUnifiedTopology: true,
@@ -47,7 +48,7 @@ async function seedDB() {
 
 async function test() {
   const uri =
-    'mongodb+srv://jgonzalez:FhkS1123@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
+    'mongodb+srv://jgonzalez:sjfJPtyk23@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
   const client = new MongoClient(uri, { useNewUrlParser: true });
   try {
     await client.connect();
