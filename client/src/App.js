@@ -24,6 +24,7 @@ import './App.css';
 import { Paper, ThemeProvider } from '@material-ui/core';
 import { ProductDispatchContext } from './contexts/product.context';
 import { updateCollections } from './reducer/productReducer';
+import Footer from './components/footer/footer.component';
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -58,7 +59,6 @@ function App() {
       }
     }
     getProducts();
-    console.log('Testing UseEffect');
     return () => {
       //cleanup
     };
@@ -139,6 +139,7 @@ function App() {
               </Route>
             </Switch>
             <BottomNavigationFooter />
+            
           </Paper>
         </ThemeProvider>
       </FetchProvider>
