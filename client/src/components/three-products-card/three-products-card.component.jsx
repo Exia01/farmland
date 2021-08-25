@@ -1,7 +1,13 @@
-import React from 'react';
+import { useContext } from 'react';
+import { ProductContext } from '../../contexts/product.context';
+
+//tools
+import { getRandom } from './../../utils/productPicker';
+
+import ProductCard from '../product-card/product-card.component';
 
 // Material Ui
-import { Typography, Grid, Button } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 
 // Styles
 import useStyles from './three-products-card.styles';
@@ -14,12 +20,11 @@ export default function ThreeProductsCard() {
     <>
       {/* Products Grid */}
 
-      <Grid className={classes.productDisplay}>
+      <Grid className={classes.root} >
         {randomlyPickedProductsArr.length > 0 ? (
           randomlyPickedProductsArr.map((product) => (
-            <Grid item xs={12} sm={10} md={4}>
+            <Grid item xs={12} sm={10} md={4} key={product._id}>
               <ProductCard
-                key={product._id}
                 image={product.thumbnail}
                 title={product.name}
                 description={product.description}
@@ -28,8 +33,8 @@ export default function ThreeProductsCard() {
             </Grid>
           ))
         ) : (
-          <Grid item xs={10} md={8} lg={12} className='mt-3'>
-            <Typography component='h2'>No Results</Typography>
+          <Grid item xs={10} md={8} lg={10} className='mt-3'>
+            <Typography component='h2'>No Products Available</Typography>
           </Grid>
         )}
       </Grid>
