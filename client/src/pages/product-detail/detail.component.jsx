@@ -43,8 +43,8 @@ const ProductDetail = (props) => {
       <Container className={classes.root}>
         {/* Product Grid */}
         {foundProduct.length > 0 ? (
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={8}>
+          <Grid container>
+            <Grid item xs={12} md={8} container>
               <img
                 src={foundProduct[0].thumbnail}
                 alt='product-img'
@@ -59,10 +59,10 @@ const ProductDetail = (props) => {
               className={classes.sideCol}
               justify='center'
             >
-              <Grid item xs={12}>
-                <Typography variant='h4'>{foundProduct[0].name}</Typography>
-                <Typography variant='h5'>$0.00</Typography>
-                <Typography variant='body1'>8 In Stock </Typography>
+              <Grid item xs={12} >
+                <Typography variant='h4' gutterBottom>{foundProduct[0].name}</Typography>
+                <Typography variant='h5' gutterBottom>$0.00</Typography>
+                <Typography variant='body1' gutterBottom>8 In Stock </Typography>
                 <Divider light className={classes.hrDivider} />
               </Grid>
               <Grid
@@ -182,7 +182,13 @@ const ProductDetail = (props) => {
             </Typography>
           </Grid>
         )}
-        <Grid item container justify='center' xs className={classes.suggestionsTitle}>
+        <Grid
+          item
+          container
+          justify='center'
+          xs
+          className={classes.suggestionsTitle}
+        >
           <Typography variant='h2' gutterBottom component='h2'>
             You may also like
           </Typography>
