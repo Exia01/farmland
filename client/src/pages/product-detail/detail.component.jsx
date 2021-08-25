@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
+// Components
+import ThreeProductsCard from '../../components/three-products-card/three-products-card.component';
 //contexts
 import { ProductContext } from '../../contexts/product.context';
 
@@ -175,9 +177,17 @@ const ProductDetail = (props) => {
         ) : (
           <Grid item xs={10} container justify='center'>
             {/* if not product found */}
-            <h1>Not Found</h1>
+            <Typography variant='h2' gutterBottom component='h2'>
+              No Products Found
+            </Typography>
           </Grid>
         )}
+        <Grid item container justify='center' xs className={classes.suggestionsTitle}>
+          <Typography variant='h2' gutterBottom component='h2'>
+            You may also like
+          </Typography>
+        </Grid>
+        <ThreeProductsCard />
       </Container>
     </>
   );
