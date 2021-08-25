@@ -66,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   spacer: {},
+  suggestionsTitle: {
+    margin: '2rem 0 1rem 0',
+  },
 }));
 
 export default useStyles;
