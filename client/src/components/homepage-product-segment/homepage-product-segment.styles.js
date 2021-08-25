@@ -20,16 +20,6 @@ const useStyles = makeStyles((theme) => ({
       flex: '0 0 auto',
     },
   },
-  productDisplay: {
-    margin: '1rem 0',
-    display: 'flex',
-    // gap: '1rem',
-    flexFlow: 'wrap',
-    alignItems: 'stretch',
-    '& .MuiPaper-root.MuiCard-root': {
-      height: '100%',
-    },
-  },
 }));
 
 export default useStyles;
