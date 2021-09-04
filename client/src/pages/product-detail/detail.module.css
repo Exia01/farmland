@@ -1,0 +1,68 @@
+.root {
+}
+
+.imageInfoContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.productDetailPage {
+}
+.imagecol {
+  padding: 0 1rem;
+}
+.productImage {
+  max-width: 100%;
+}
+.productInfoCol {
+  gap: 5px;
+}
+.hrDivider {
+}
+
+.btnVariantWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.productSizeOpts .qtyDiv {
+  display: flex;
+  max-height: 40px;
+  margin-bottom: 8px;
+}
+.qtyBtn {
+  font-size: 1.1rem;
+}
+.qtyBtn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.qtyBtn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.qtyInput {
+  height: 100%;
+  font-size: 1.1rem;
+  width: 50px;
+  text-align: center;
+  border: 1px solid;
+  outline: none;
+}
+
+.suggestionsTitle {
+  margin: 2rem 0 1rem 0;
+}
+
+@media (min-width: 600px) {
+}
+
+@media (min-width: 960px) {
+}
+
+@media (min-width: 1280px) {
+}
+
+@media (min-width: 1920px) {
+}
