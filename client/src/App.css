@@ -1,0 +1,21 @@
+/* html,
+body:not(.landing),
+#root,
+.App:not(.landing) {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.App > div.MuiPaper-root.MuiPaper-elevation0.MuiPaper-rounded {
+  height: 100%;
+} */
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.App > div.MuiPaper-root.MuiPaper-elevation0.MuiPaper-rounded {
+  min-height: 100vh;
+}
