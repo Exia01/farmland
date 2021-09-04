@@ -6,7 +6,8 @@ import ThreeProductsCard from '../../components/three-products-card/three-produc
 //contexts
 import { ProductContext } from '../../contexts/product.context';
 
-// Styles
+//styles
+import styles from './detail.module.css';
 import useStyles from './detail.styles';
 
 // Material Ui
@@ -26,7 +27,7 @@ import {
 import temp_product_img from '../../uploads/images/fruits/blueberries/joanna-kosinska-4qujjbj3srs-unsplash.jpg';
 
 const ProductDetail = (props) => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [currentQty, setCurrentQty] = useState(1);
   const { id } = useParams();
   const { products } = useContext(ProductContext);
@@ -40,66 +41,78 @@ const ProductDetail = (props) => {
 
   return (
     <>
-      <Container className={classes.root}>
+      <Container className={`${styles.productDetailPage} ${styles.root}`}>
         {/* Product Grid */}
         {foundProduct.length > 0 ? (
-          <Grid container>
-            <Grid item xs={12} md={8} container>
+          <Grid container className={styles.imageInfoContainer}>
+            {/* Product Image */}
+            <Grid item xs={12} sm className={styles.imageCol}>
               <img
-                src={foundProduct[0].thumbnail}
+                // src={foundProduct[0].thumbnail}
+                src={temp_product_img}
                 alt='product-img'
-                className={classes.productImage}
+                className={styles.productImage}
               />
             </Grid>
+            {/* Product info/opts */}
             <Grid
               item
               xs={12}
-              md={4}
+              sm={4}
               container
-              className={classes.sideCol}
+              className={styles.productInfoCol}
               justify='center'
             >
-              <Grid item xs={12} >
-                <Typography variant='h4' gutterBottom>{foundProduct[0].name}</Typography>
-                <Typography variant='h5' gutterBottom>$0.00</Typography>
-                <Typography variant='body1' gutterBottom>8 In Stock </Typography>
-                <Divider light className={classes.hrDivider} />
+              <Grid item xs={12} className={styles.productInfoDiv}>
+                {/* product name */}
+                <Typography variant='h4' gutterBottom>
+                  {foundProduct[0].name}
+                </Typography>
+                {/* product price */}
+                <Typography variant='h5' gutterBottom>
+                  $0.00
+                </Typography>
+                {/* stock availability */}
+                <Typography variant='body1' gutterBottom>
+                  8 In Stock
+                </Typography>
+                <Divider light className={styles.hrDivider} />
               </Grid>
+
               <Grid
                 item
                 xs={12}
                 container
-                // direction='column'
-                className={`size-choice ${classes.sizeOptsWrapper}`}
+                className={`size-choice ${styles.productSizeOpts}`}
               >
-                <Grid item xs={12} className='span-container'>
-                  <Typography variant='body2'>Size</Typography>
+                <Grid item xs={12}>
+                  <Typography component='h6' variant='h6' gutterBottom>
+                    Size
+                  </Typography>
                 </Grid>
                 <Grid
                   item
-                  xs={12}
-                  sm={9}
-                  md={12}
+                  xs
                   container
                   // justify='space-between'
-                  className={`${classes.btnSpace} ${classes.btnVariantWrapper}`}
+                  className={`${styles.btnSpace} ${styles.btnVariantWrapper}`}
                 >
                   <Button
-                    className={classes.btnSizeVariant}
+                    className={styles.btnSizeVariant}
                     variant='outlined'
                     color='primary'
                   >
                     Option #1
                   </Button>
                   <Button
-                    className={classes.btnSizeVariant}
+                    className={styles.btnSizeVariant}
                     variant='outlined'
                     color='primary'
                   >
                     Option #2
                   </Button>
                   <Button
-                    className={classes.btnSizeVariant}
+                    className={styles.btnSizeVariant}
                     variant='outlined'
                     color='primary'
                   >
@@ -107,19 +120,14 @@ const ProductDetail = (props) => {
                   </Button>
                 </Grid>
 
-                <Grid item xs={12} className='span-container'>
-                  <Typography variant='body2'>Quantity</Typography>
+                <Grid item xs={12}>
+                  <Typography component='h6' variant='h6'>
+                    Quantity
+                  </Typography>
                 </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  md={10}
-                  className={classes.qtyWrapper}
-                  container
-                  alignItems='stretch'
-                >
+                <Grid item xs={12} md={10} className={styles.qtyDiv}>
                   <Button
-                    className={classes.qtyBtn}
+                    className={styles.qtyBtn}
                     disableElevation
                     variant='contained'
                     color='secondary'
@@ -134,10 +142,10 @@ const ProductDetail = (props) => {
                     pattern='[0-9]*'
                     value={currentQty}
                     onChange={onChangeHandler}
-                    className={classes.qtyInput}
+                    className={styles.qtyInput}
                   />
                   <Button
-                    className={classes.qtyBtn}
+                    className={styles.qtyBtn}
                     disableElevation
                     variant='contained'
                     color='secondary'
@@ -145,10 +153,10 @@ const ProductDetail = (props) => {
                     -
                   </Button>
                 </Grid>
-                <Grid item xs={12} className={classes.spacer}>
+                <Grid item xs={12} >
                   <Button
                     type='submit'
-                    className={classes.btnSpace}
+                    className={styles.btnSpace}
                     variant='contained'
                     color='primary'
                     fullWidth
@@ -175,7 +183,7 @@ const ProductDetail = (props) => {
             </Grid>
           </Grid>
         ) : (
-          <Grid item xs={10} container justify='center'>
+          <Grid item xs={10} md container justify='center'>
             {/* if not product found */}
             <Typography variant='h2' gutterBottom component='h2'>
               No Products Found
@@ -187,7 +195,7 @@ const ProductDetail = (props) => {
           container
           justify='center'
           xs
-          className={classes.suggestionsTitle}
+          className={styles.suggestionsTitle}
         >
           <Typography variant='h2' gutterBottom component='h2'>
             You may also like
