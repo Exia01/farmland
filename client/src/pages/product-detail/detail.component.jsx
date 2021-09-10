@@ -8,7 +8,6 @@ import { ProductContext } from '../../contexts/product.context';
 
 //styles
 import styles from './detail.module.css';
-import useStyles from './detail.styles';
 
 // Material Ui
 import {
@@ -70,7 +69,7 @@ const ProductDetail = (props) => {
                 </Typography>
                 {/* product price */}
                 <Typography variant='h5' gutterBottom>
-                  $0.00
+                  ${foundProduct[0].price}
                 </Typography>
                 {/* stock availability */}
                 <Typography variant='body1' gutterBottom>
@@ -153,7 +152,7 @@ const ProductDetail = (props) => {
                     -
                   </Button>
                 </Grid>
-                <Grid item xs={12} >
+                <Grid item xs={12}>
                   <Button
                     type='submit'
                     className={styles.btnSpace}
