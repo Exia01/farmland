@@ -17,6 +17,8 @@ const useStyles = makeStyles({
     margin: '0 auto',
     display: 'flex',
     flexFlow: 'wrap',
+    // Needed for the items to match in height regardless of text
+    height: '100%',
   },
   media: {
     height: 250,
