@@ -4,12 +4,15 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: '1rem 0',
     display: 'flex',
-    // gap: '1rem',
     flexFlow: 'wrap',
     alignItems: 'stretch',
-    '& .MuiPaper-root.MuiCard-root': {
-      height: '100%',
+    [theme.breakpoints.down('sm')]: {
+      gap: '1rem',
+      justifyContent: 'center',
     },
+    // '& .MuiPaper-root.MuiCard-root': {
+    //   height: '100%',
+    // },
   },
 }));
 
