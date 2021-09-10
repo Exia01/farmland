@@ -3,7 +3,8 @@ export function getRandom(arr, n) {
     len = arr.length,
     taken = new Array(len);
   if (n > len)
-    throw new RangeError('getRandom: more elements taken than available');
+    // throw new RangeError('getRandom: more elements taken than available');
+    return [];
   while (n--) {
     var x = Math.floor(Math.random() * len);
     result[n] = arr[x in taken ? taken[x] : x];
