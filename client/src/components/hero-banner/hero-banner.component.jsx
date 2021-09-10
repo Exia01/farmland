@@ -23,9 +23,9 @@ export default function HeroBanner() {
           <div className={styles.imgDiv}>
             <img src={logo} alt='logo' />
           </div>
-          <Typography variant='h3'>FARMLAND</Typography>
+          {/* <Typography variant='h3'>FARMLAND</Typography> */}
           <div className={styles.item}>
-            <Link to='/shop'>
+            <Link to='/products'>
               <p className={styles.title}>Shop Now</p>
               <p>
                 {' '}
