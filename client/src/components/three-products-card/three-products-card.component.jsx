@@ -20,7 +20,7 @@ export default function ThreeProductsCard() {
     <>
       {/* Products Grid */}
 
-      <Grid className={classes.root} >
+      <Grid className={classes.root}>
         {randomlyPickedProductsArr.length > 0 ? (
           randomlyPickedProductsArr.map((product) => (
             <Grid item xs={12} sm={10} md={4} key={product._id}>
@@ -33,8 +33,10 @@ export default function ThreeProductsCard() {
             </Grid>
           ))
         ) : (
-          <Grid item xs={10} md={8} lg={10} className='mt-3'>
-            <Typography component='h2'>No Products Available</Typography>
+          <Grid item xs={10} md={8} lg={10} className='mt-3' justify='center'>
+            <Typography component='body2' variant='h5'>
+              No Products Available
+            </Typography>
           </Grid>
         )}
       </Grid>
