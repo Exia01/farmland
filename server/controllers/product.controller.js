@@ -3,12 +3,44 @@ const Product = require('../models/product.model');
 const ProoductVariant = require('../models/productVariant.model');
 exports.index = async (req, res, next) => {
   // console.log(req.user);
+  let limit = parseInt(req.query.limit); // Make sure to parse the limit to number
+  let skip = parseInt(req.query.skip); // Make sure to parse the skip to number
+  // console.log(`limit:${limit} .... skip: ${skip}`);
+  if (!limit) {
+    limit = 0;
+  }
+  if (!skip) {
+    skip = 0;
+  }
+
+  console.log(skip, limit);
+  let queryObj = {};
+
+  if (req.query.name) {
+    // Could do if req.query.name != ""
+    console.log(req.query.name);
+  }
+
+  //https://stackoverflow.com/questions/45285129/any-difference-between-await-promise-all-and-multiple-awaitk
   try {
-    const products = await Product.find({})
-      .lean()
-      .populate('productVariants')
-      .exec();
-    return res.status(200).json(products);
+    const [products, total] = await Promise.all([
+      Product.find(queryObj)
+        .sort({ _id: -1 }) // Use this to sort documents by newest first
+        .skip(skip) // Always apply 'skip' before 'limit'
+        .limit(limit) // This is your 'page size'
+        .lean()
+        .populate('productVariants')
+        .exec(),
+      Product.countDocuments(),
+    ]);
+    // const products = await Product.find(queryObj)
+    //   .sort({ _id: -1 }) // Use this to sort documents by newest first
+    //   .skip(skip) // Always apply 'skip' before 'limit'
+    //   .limit(limit) // This is your 'page size'
+    //   .lean()
+    //   .populate('productVariants')
+    //   .exec();
+    return res.status(200).json({ products, total });
   } catch (err) {
     let errMsg = err.stack;
     let message = 'Could not complete request';
@@ -100,3 +132,7 @@ exports.deleteProduct = async (req, res, next) => {
     res.status(500).json({ msg: message, errMsg });
   }
 };
+
+/* 
+A falsy value is something which evaluates to FALSE, for instance when checking a variable. There are only six falsey values in JavaScript: undefined, null, NaN, 0, "" (empty string), and false of course.*/
+// https://www.freecodecamp.org/news/falsy-values-in-javascript/
