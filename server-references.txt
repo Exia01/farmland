@@ -25,9 +25,21 @@ Express Middlewares:
 
 Promise, Promise all implementation:
     - https://www.digitalocean.com/community/tutorials/js-async-functions
+    - https://stackoverflow.com/questions/45285129/any-difference-between-await-promise-all-and-multiple-await
 
 Cookies:
     - https://alligator.io/nodejs/express-cookies/
+
+Pagination:
+    - https://www.bezkoder.com/node-js-mongodb-pagination/
+    - https://www.npmjs.com/package/mongoose-paginate-v2
+    - https://stackoverflow.com/questions/5539955/how-to-paginate-with-mongoose-in-node-js?page=1&tab=votes#tab-top
+    - https://softwareontheroad.com/pagination-in-nodejs-mongo/
+    - https://itnext.io/back-end-pagination-with-nodejs-expressjs-mongodb-mongoose-ejs-3566994356e0
+
+    -- How to set total pages on Material Ui Pagination
+        - https://www.cronj.com/blog/reactjs-pagination/
+    
 
 
 
@@ -49,6 +61,11 @@ Mongoose
 
     Create Vs Save method: 
         -   https://stackoverflow.com/questions/38290684/mongoose-save-vs-insert-vs-create/38291042
+    
+    Conditional query parameters:
+        - https://stackoverflow.com/questions/32338316/optional-search-parameters-with-mongoose
+        - https://stackoverflow.com/questions/33461355/how-do-i-use-the-mongoosejs-find-function-with-optional-parameters
+        - https://stackoverflow.com/questions/19579791/optional-parameters-for-mongodb-query
 
     Seed DB:
         - https://medium.com/@tayot51/seed-mongodb-mongoose-seed-378d7c0122d3
