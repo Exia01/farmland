@@ -47,13 +47,13 @@ function App() {
     return () => {};
   }, []);
 
-  // Products useEffect
+  // Products useEffect --> Will need to move this to the Landing page
 
   useEffect(() => {
     async function getProducts() {
       try {
         const res = await axios.get('/v1/products');
-        productDispatch(updateCollections(res.data));
+        productDispatch(updateCollections(res.data.products));
       } catch (err) {
         console.log('getProductsError', err);
       }
@@ -139,7 +139,6 @@ function App() {
               </Route>
             </Switch>
             <BottomNavigationFooter />
-            
           </Paper>
         </ThemeProvider>
       </FetchProvider>
