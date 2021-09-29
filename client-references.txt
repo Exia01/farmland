@@ -66,6 +66,9 @@ CSS:
         - https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
         - https://stackoverflow.com/questions/8522047/why-is-this-container-div-taller-than-required-to-wrap-the-image-it-contains
 
+    react pagination:
+        - https://www.bezkoder.com/react-pagination-hooks/
+
 
 
 To implement Later:
