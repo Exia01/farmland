@@ -1,5 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react';
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
+
 
 import { themeReducer, initializer } from '../reducer/themeReducer';
 
@@ -8,7 +9,7 @@ export const SetContext = createContext();
 
 export default function CurrentThemeProvider(props) {
   const [themePreference, dispatch] = useReducer(themeReducer, {}, initializer);
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
       type: themePreference.palette.type,
       primary: {
