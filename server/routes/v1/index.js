@@ -25,11 +25,11 @@ router.use('/user', userRoutes);
 router.get('/status', (req, res) => res.status(200).send('OK'));
 
 // Will check for user before reaching any of the routes below
-router.use(attachUser);
 /**
  * GET messages for auth test
  */
 router.use('/products', productRoutes);
+// router.use(attachUser);
 router.use('/products/:product_id/variants', productVariantRoutes);
 router.use('/variants', productVariantRoutes);
 
