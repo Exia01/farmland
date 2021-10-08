@@ -70,7 +70,6 @@ CSS:
         - https://www.bezkoder.com/react-pagination-hooks/
 
 
-
 To implement Later:
      
      Form validation wih Formik:
@@ -84,7 +83,11 @@ To implement Later:
 
 
 
-
 Misc: 
     - Boolean Objs:
         - https://www.javascripttutorial.net/javascript-boolean/
+
+
+Setting Browser:
+    - https://stackoverflow.com/questions/51706882/create-react-app-how-do-i-npm-start-with-a-specific-browser
+    - https://stackoverflow.com/questions/66212423/why-vscode-open-react-app-in-edge-instead-of-chrome
