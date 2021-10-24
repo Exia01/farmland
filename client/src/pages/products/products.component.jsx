@@ -29,7 +29,7 @@ const Products = () => {
   const classes = useStyles();
   // const { products } = useContext(ProductContext);
   const [limit, setLimit] = useState(4);
-  const [skip, setSkip] = useState(1);
+  const [skip, setSkip] = useState(0);
 
   const [currentProducts, setCurrentProducts] = useState([]);
   const [totalDocuments, setTotalDocuments] = useState(1);
@@ -42,7 +42,7 @@ const Products = () => {
   var totalPages = Math.ceil(totalDocuments / limit);
   console.log(`totalPages ${totalPages}`);
   const fetchProducts = async () => {
-    console.log(`Skip: ${skip}, Limit:${limit}`);
+    // console.log(`Skip: ${skip}, Limit:${limit}`);
     let params = { skip, limit, name: 'N-A' };
     try {
       let res = await productService.getAllProducts(params);
