@@ -1,7 +1,7 @@
+import { useContext, useEffect } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { ThemeContext } from './contexts/theme.context';
 import { FetchProvider } from './contexts/fetch.context';
-import { useContext, useEffect } from 'react';
 import { AuthContext, AuthDispatchContext } from './contexts/auth.context';
 import axios from 'axios';
 import CreateProduct from './pages/create-product/create-product.component';
@@ -17,14 +17,16 @@ import Products from './pages/products/products.component';
 import ProductDetail from './pages/product-detail/detail.component';
 import BottomNavigationFooter from './components/bottom-navigation-footer/bottom-navigation-footer.component';
 import Account from './pages/account/account.component';
+import Footer from './components/footer/footer.component';
 
 // Css
 import './App.css';
 // Material Ui
 import { Paper, ThemeProvider } from '@material-ui/core';
+
+// context
 import { ProductDispatchContext } from './contexts/product.context';
 import { updateCollections } from './reducer/productReducer';
-import Footer from './components/footer/footer.component';
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -49,20 +51,6 @@ function App() {
 
   // Products useEffect --> Will need to move this to the Landing page
 
-  useEffect(() => {
-    async function getProducts() {
-      try {
-        const res = await axios.get('/v1/products');
-        productDispatch(updateCollections(res.data.products));
-      } catch (err) {
-        console.log('getProductsError', err);
-      }
-    }
-    getProducts();
-    return () => {
-      //cleanup
-    };
-  }, []);
 
   const AuthenticatedRoute = ({ children, ...rest }) => {
     //could implement import here?

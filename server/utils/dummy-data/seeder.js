@@ -12,8 +12,7 @@ function randomIntFromInterval(min, max) {
 async function seedDB() {
   console.log('hello??');
   // Connection URL
-  const uri =
-    'mongodb+srv://jgonzalez:sjfJPtyk23@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
+  const uri ='URIGOESHERE'
 
   console.log('hello??1');
   console.log(uri);
@@ -47,9 +46,8 @@ async function seedDB() {
 // seedDB();
 
 async function test() {
-  const uri =
-    'mongodb+srv://jgonzalez:sjfJPtyk23@cluster0.6flhx.gcp.mongodb.net/farmland?retryWrites=true&w=majority';
-  const client = new MongoClient(uri, { useNewUrlParser: true });
+  const uri =''
+    const client = new MongoClient(uri, { useNewUrlParser: true });
   try {
     await client.connect();
 
