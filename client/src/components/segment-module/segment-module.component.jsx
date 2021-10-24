@@ -10,7 +10,7 @@ function SegmentModule() {
         container
         spacing={3}
         className={classes.gridContainer}
-        justify='center'
+        justifyContent='center'
       >
         <Grid item xs={12} md={4} className={classes.item}>
           <div className={classes.itemImage}>

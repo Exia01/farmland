@@ -4,7 +4,7 @@ import useStyles from './footer.style';
 
 export default function Footer() {
   return (
-    <Grid container spacing={2} justify='center'>
+    <Grid container spacing={2} justifyContent='center'>
       <Grid item xs={12} lg={3}>
         <Typography variant='body1'>
           Credits to the following artist for the pictures:

@@ -8,8 +8,8 @@ import styles from './account.module.css';
 function Account() {
   return (
     <Container>
-      <Grid container justify='center' className={styles.gridContainer}>
-        <Grid item xs={12} container justify='center'>
+      <Grid container justifyContent='center' className={styles.gridContainer}>
+        <Grid item xs={12} container justifyContent='center'>
           <Grid item className={styles.titleContainer}>
             <Typography variant='h3' gutterBottom>
               My Account

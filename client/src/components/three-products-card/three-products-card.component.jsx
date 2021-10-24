@@ -33,7 +33,7 @@ export default function ThreeProductsCard() {
             </Grid>
           ))
         ) : (
-          <Grid item xs={10} md={8} lg={10} className='mt-3' justify='center'>
+          <Grid item xs={10} md={8} lg={10} className='mt-3' justifyContent='center'>
             <Typography component='body2' variant='h5'>
               No Products Available
             </Typography>

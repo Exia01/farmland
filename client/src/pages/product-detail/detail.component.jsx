@@ -60,7 +60,7 @@ const ProductDetail = (props) => {
               sm={4}
               container
               className={styles.productInfoCol}
-              justify='center'
+              justifyContent='center'
             >
               <Grid item xs={12} className={styles.productInfoDiv}>
                 {/* product name */}
@@ -182,7 +182,7 @@ const ProductDetail = (props) => {
             </Grid>
           </Grid>
         ) : (
-          <Grid item xs={10} md container justify='center'>
+          <Grid item xs={10} md container justifyContent='center'>
             {/* if not product found */}
             <Typography variant='h2' gutterBottom component='h2'>
               No Products Found
@@ -192,7 +192,7 @@ const ProductDetail = (props) => {
         <Grid
           item
           container
-          justify='center'
+          justifyContent='center'
           xs
           className={styles.suggestionsTitle}
         >

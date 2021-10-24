@@ -15,7 +15,7 @@ export default function HomepageProductSegment() {
 
   return (
     <div className={classes.root}>
-      <Grid container className={classes.gridContainer} justify='center'>
+      <Grid container className={classes.gridContainer} justifyContent='center'>
         <Grid item xs={12}>
           <hr className={classes.sectionBorder} />
         </Grid>
@@ -23,10 +23,10 @@ export default function HomepageProductSegment() {
           item
           container
           xs={12}
-          justify='center'
+          justifyContent='center'
           className={classes.titleBtnLink}
         >
-          <Grid container justify='center' className={classes.titleHeader}>
+          <Grid container justifyContent='center' className={classes.titleHeader}>
             <Typography variant='h2' gutterBottom component='h2'>
               Our Delicious Products
             </Typography>
@@ -34,7 +34,7 @@ export default function HomepageProductSegment() {
           <Grid
             container
             alignItems='center'
-            justify='center'
+            justifyContent='center'
             className={classes.btnLink}
           >
             <Button variant='outlined' color='primary' onClick={onClickHandler}>

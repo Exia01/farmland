@@ -126,7 +126,7 @@ export default function Register() {
       {redirectOnLogin && <Redirect to='/dashboard' />}
 
       <Container maxWidth={'sm'}>
-        <Grid container justify='center' className={classes.root}>
+        <Grid container justifyContent='center' className={classes.root}>
           <div className={classes.linkLogo}>
             <Link to='/'>
               <img src={logo} alt='Logo' />
