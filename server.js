@@ -1,14 +1,13 @@
 const { port, env } = require('./server/config/variables');
 const app = require('./server/config/express');
-const mongoose = require('./server/config/mongoose');
+const mongooseConnect = require('./server/config/mongoose');
 const logger = require('./server/config/logger');
 
 const testCall = require('./server/utils/testAxiosCalls');
 
 // open mongoose connection
 
-
-mongoose.connect();
+mongooseConnect();
 // listen to requests
 // app.listen(port, () => console.log(`Server started on port ${port} ${env}`));
 
