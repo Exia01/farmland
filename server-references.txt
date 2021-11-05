@@ -70,3 +70,7 @@ Mongoose
     Seed DB:
         - https://medium.com/@tayot51/seed-mongodb-mongoose-seed-378d7c0122d3
         - https://developer.mongodb.com/how-to/seed-database-with-fake-data/
+
+
+Documentation:
+    - https://gomakethings.com/whats-the-best-way-to-document-javascript/
