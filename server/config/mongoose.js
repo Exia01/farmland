@@ -3,14 +3,14 @@ const db = mongoose.connection;
 const logger = require('./logger');
 const { mongo, ev } = require('../config/variables');
 
-// Exit application on error
-db.on('error', (err) => {
-  logger.error(`MongoDB connection error: ${err}`);
-  process.exit(-1);
-});
-db.once('open', function () {
-  console.log('mongoDB connected...');
-});
+// // Exit application on error
+// db.on('error', (err) => {
+//   logger.error(`MongoDB connection error: ${err}`);
+//   process.exit(-1);
+// });
+// db.once('open', function () {
+//   console.log('mongoDB connected...');
+// });
 
 /**
  * Connect to mongo db
@@ -22,9 +22,16 @@ db.once('open', function () {
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
+async function mongooseConnect() {
+  try {
+    await mongoose.connect(mongo.uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('mongoDB connected...');
+  } catch (error) {
+    logger.error(`MongoDB connection error: ${err}`);
+  }
+}
 
-exports.connect = () => {};
-mongoose.connect(mongo.uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+module.exports = mongooseConnect;
