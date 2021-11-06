@@ -7,42 +7,34 @@ const ProductSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, 'Name is Required'],
+      required: true,
       unique: true,
       trim: true,
     },
-    description: {
+    desc: {
+      //description
       type: String,
       required: true,
     },
     department: {
       type: String,
+      //could also make it several
+      //type:Array
     },
-    // category:{
-    //   //Not implemented yet
-    // },
-    // discount:{}
-    thumbnail: {
+    img: {
       type: String,
       default: 'https://www.freeiconspng.com/uploads/no-image-icon-4.png',
     },
-    // stock: {
-    //   type: Number,
-    //   min: 0,
-    //   required: true
-    // },
     listed: {
       type: Boolean,
     },
-    // isAvailable: {
-    //   type: Boolean,
-    // },
-    productVariants: [{ type: Schema.Types.ObjectId, ref: 'product-variants' }],
-    //image or images
-    //can be removed later
+    inStock: {
+      type: Boolean,
+    },
     price: {
       type: Number,
     },
+    addedBy: { type: Schema.Types.ObjectId, ref: 'user' },
   },
   {
     timestamps: true,
