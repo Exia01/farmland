@@ -18,11 +18,13 @@ const VariantSchema = new Schema({
   },
   price: {
     type: String,
-    required: [true, 'Price is Required'],
+    // required: [true, 'Price is Required'],
+    required: true,
   },
   stock: {
     type: Number,
-    required: ['Stock Qty is required'],
+    // required: ['Stock Qty is required'],
+    required: true,
   },
   soldOut: {
     type: Boolean,
@@ -33,10 +35,10 @@ const VariantSchema = new Schema({
   },
   reviews: {},
   product: { type: Schema.Types.ObjectId, ref: 'product' },
+  addedBy: { type: Schema.Types.ObjectId, ref: 'user' },
 });
 
 module.exports = ProductVariant = mongoose.model(
   'product-variants',
   VariantSchema
 ); //this will be used by the ref
-
