@@ -1,5 +1,5 @@
 const httpStatus = require('http-status');
-const ProductVariant = require('../models/productVariant.model');
+const ProductVariant = require('../models/variant.model');
 const Product = require('../models/product.model');
 
 exports.index = async (req, res, next) => {

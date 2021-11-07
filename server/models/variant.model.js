@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Product = require('./productVariant.model');
+const Product = require('./variant.model');
 
 const VariantSchema = new Schema({
   //sku
@@ -38,7 +38,4 @@ const VariantSchema = new Schema({
   addedBy: { type: Schema.Types.ObjectId, ref: 'user' },
 });
 
-module.exports = ProductVariant = mongoose.model(
-  'product-variants',
-  VariantSchema
-); //this will be used by the ref
+module.exports = ProductVariant = mongoose.model('Variant', VariantSchema); //this will be used by the ref
