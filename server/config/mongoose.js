@@ -3,15 +3,6 @@ const db = mongoose.connection;
 const logger = require('./logger');
 const { mongo, ev } = require('../config/variables');
 
-// // Exit application on error
-// db.on('error', (err) => {
-//   logger.error(`MongoDB connection error: ${err}`);
-//   process.exit(-1);
-// });
-// db.once('open', function () {
-//   console.log('mongoDB connected...');
-// });
-
 /**
  * Connect to mongo db
  *could exported it as a module
@@ -22,6 +13,7 @@ const { mongo, ev } = require('../config/variables');
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
+
 async function mongooseConnect() {
   try {
     await mongoose.connect(mongo.uri, {
