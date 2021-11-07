@@ -30,7 +30,7 @@ router.get('/status', (req, res) => res.status(200).send('OK'));
  */
 router.use('/products', productRoutes);
 // router.use(attachUser);
-router.use('/products/:product_id/variants', productVariantRoutes);
+router.use('/products/:product_id/', productVariantRoutes);
 router.use('/variants', productVariantRoutes);
 
 // If no API routes are hit, send the React app...Not implemented yet
