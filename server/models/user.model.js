@@ -1,37 +1,40 @@
-const mongoose = require("mongoose");
-
+const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const UserSchema = new Schema(
+  {
     name: {
-        type: String,
-        trim: true, 
+      type: String,
+      trim: true,
     },
-
     email: {
-        type: String,
-        trim: true,
-        unique: true,
-        // match: [/.+@.\..+/, "Please Enter a valid e-mail address"],
-        required: "Email is Required",
+      type: String,
+      trim: true,
+      unique: true,
+      // match: [/.+@.\..+/, "Please Enter a valid e-mail address"],
+      required: true,
     },
     password: {
-        type: String,
-        required: "Password is Required",
-        minlength: 5
+      type: String,
+      required: true,
+      minlength: 5,
     },
-    role:{
-        type:String,
+    role: {
+      type: String,
     },
-    cartNumber: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'SavedCart'
-        }
-    ]
-});
+    relatedCarts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'SavedCart',
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
