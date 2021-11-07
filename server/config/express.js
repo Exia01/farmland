@@ -37,6 +37,6 @@ app.use(cookieParser());
 //   next();
 // });
 // mount api v1 routes
-app.use('/v1', routes);
+app.use('/api/v1', routes);
 
 module.exports = app;
