@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Variant = require('./productVariant.model');
 
 const ProductSchema = new Schema(
   {
@@ -34,6 +33,7 @@ const ProductSchema = new Schema(
     price: {
       type: Number,
     },
+    variants: { type: Schema.Types.ObjectId, ref: 'variant' },
     addedBy: { type: Schema.Types.ObjectId, ref: 'user' },
   },
   {
@@ -41,4 +41,4 @@ const ProductSchema = new Schema(
   }
 );
 
-module.exports = Product = mongoose.model('product', ProductSchema);
+module.exports = Product = mongoose.model('Product', ProductSchema);
