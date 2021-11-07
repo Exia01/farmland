@@ -55,6 +55,8 @@ Mongoose
 
     Embedding or referencing:
         -  https://www.oreilly.com/library/view/mongodb-applied-design/9781449340056/ch01.html
+        -  https://stackoverflow.com/questions/21302279/embedded-document-vs-reference-in-mongoose-design-model
+        -  https://docs.mongodb.com/manual/tutorial/model-embedded-one-to-many-relationships-between-documents/
     
     Pull method: 
         -   https://docs.mongodb.com/manual/reference/operator/update/pull/
