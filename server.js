@@ -13,7 +13,7 @@ mongooseConnect();
 
 // listen to requests
 
-app.listen(port, () => logger.info(`server started on port ${port} (${env})`));
+app.listen(port, () => logger.info(`Server started on port ${port} (${env})`));
 /**
  * Exports express
  * @public
