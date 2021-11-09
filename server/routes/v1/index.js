@@ -17,6 +17,9 @@ router.use((req, res, next) => {
 /**
  * GET v1/status
  */
+/**
+ * GET messages for auth test
+ */
 router.use('/messages', messageRoutes);
 
 //optional
@@ -24,12 +27,9 @@ router.get('/csrf-token', (req, res, next) => {
   //middleware setups this token on the req.
   return res.status(200).json({ csrfToken: req.csrfToken() });
 });
-router.use('/user', userRoutes);
 router.get('/status', (req, res) => res.status(200).send('OK'));
 
-/**
- * GET messages for auth test
- */
+router.use('/user', userRoutes);
 router.use('/auth', authRoutes);
 router.use('/products', productRoutes);
 router.use('/variant/', productVariantRoutes);
