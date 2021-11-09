@@ -11,15 +11,9 @@ const { mongo, ev } = require('../config/variables');
  * @public //since everything has access?
  */
 
-mongoose.set('useCreateIndex', true);
-mongoose.set('useFindAndModify', false);
-
 async function mongooseConnect() {
   try {
-    await mongoose.connect(mongo.uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(mongo.uri);
     console.log('mongoDB connected...');
   } catch (error) {
     logger.error(`MongoDB connection error: ${err}`);
