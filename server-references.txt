@@ -40,7 +40,8 @@ Pagination:
     -- How to set total pages on Material Ui Pagination
         - https://www.cronj.com/blog/reactjs-pagination/
     
-
+Bcrypt or Crypto js:
+- https://www.npmtrends.com/bcrypt-vs-crypt-vs-crypto-js-vs-password-hash
 
 
 Mongoose
@@ -73,6 +74,9 @@ Mongoose
         - https://medium.com/@tayot51/seed-mongodb-mongoose-seed-378d7c0122d3
         - https://developer.mongodb.com/how-to/seed-database-with-fake-data/
 
+JWT
+    jwtDecode vr jwtVerify:
+        -https://community.auth0.com/t/does-jwt-decode-functionality-verify-the-token-or-only-decode-the-token-if-yes-what-all-does-the-decode-function-do/9509
 
 Documentation:
     - https://gomakethings.com/whats-the-best-way-to-document-javascript/
