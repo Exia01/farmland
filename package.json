@@ -33,10 +33,10 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "method-override": "^3.0.0",
-    "mongodb": "^4.0.1",
-    "mongoose": "^5.12.12",
+    "mongodb": "^4.1.4",
+    "mongoose": "^6.0.12",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.13",
+    "nodemon": "^2.0.14",
     "winston": "^3.3.3"
   }
 }
