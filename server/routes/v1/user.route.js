@@ -1,10 +1,13 @@
 const router = require('express').Router();
 const userController = require('../../controllers/user.controller');
+const {
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require('../../utils/auth');
 
-// Routes start with /auth
-// router.get('/', userController.index);
-router.post('/', userController.createUser);
-router.post('/login', userController.loginUser); //could also name /authenticate
-router.get('/verify-token', userController.verifyToken); //could also implement middleware?
+router.get('/', userController.index);
+router.put('/:id', verifyTokenAndAuthorization, userController.updateUser);
+router.delete('/:id', verifyTokenAndAdmin, userController.deleteUser);
 
 module.exports = router;
