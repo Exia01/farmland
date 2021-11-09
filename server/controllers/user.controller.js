@@ -12,24 +12,16 @@ const {
 const User = require('../models/user.model');
 
 // @@ Route : /users
-// router.get('/', isAuthorized, async (req, res) => {
-//   try {
-//     const user = await User.findById(req.user);
-//     // res.send(user);
-//     let returnUser = {
-//       _id: user._id,
-//       first: user.first,
-//       last: user.last,
-//       username: user.username,
-//       email: user.email,
-//       user_favorites: user.user_favorites,
-//     };
-//     res.status(200).json(returnUser);
-//   } catch (err) {
-//     res.status(400).json({ msg: 'Not Authorized', error: err });
-//   }
-// });
+exports.index = async (req, res, next) => {
+  try {
+    const users = await User.find({}).lean().exec();
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(400).json({ msg: 'Unable to complete request', error: err });
+  }
+};
 
+//Move to Auth
 // @@ REGISTER ROUTE
 // @@
 exports.createUser = async (req, res, next) => {
@@ -53,7 +45,7 @@ exports.createUser = async (req, res, next) => {
       // implement optional chaining for name
       email: email.toLowerCase(),
       password: hashedPassword,
-      role: 'admin',
+      role: req.body.role || 'admin',
     };
 
     // User Email already exists in database (?)
@@ -105,6 +97,7 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
+//Move to Auth
 // @@ LOGIN ROUTE
 // @@
 exports.loginUser = async (req, res, next) => {
@@ -130,6 +123,7 @@ exports.loginUser = async (req, res, next) => {
       const { password, name, ...rest } = currentUser;
       //Copying onto new obj with the rest of properties
       const userInfo = Object.assign({}, { ...rest });
+      console.log(userInfo);
       const token = createToken(userInfo);
 
       const decodedToken = jwtDecode(token);
@@ -154,6 +148,60 @@ exports.loginUser = async (req, res, next) => {
   }
 };
 
+// @@ UPDATE ROUTE
+// @@
+exports.updateUser = async (req, res, next) => {
+  let newPassword;
+  try {
+    if (req.body.password) {
+      newPassword = await hashPassword(req.body.password);
+      req.body.password = newPassword;
+    }
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    );
+    if (!updatedUser) {
+      return res.status(404).json({ msg: 'Unable to update user' });
+    }
+
+    res.status(200).json({
+      msg: 'Update successful!',
+      user: updatedUser,
+    });
+  } catch (err) {
+    let errMsg = err.stack;
+    let message = 'Could not complete request';
+    console.log(errMsg);
+    res.status(500).json({ msg: message, errMsg });
+  }
+};
+
+// @@ DELETE ROUTE
+// @@
+exports.deleteUser = async (req, res, next) => {
+  try {
+    console.log(req.user);
+    const deletedUser = await User.findByIdAndDelete(req.params.id);
+
+    if (!deletedUser) {
+      return res.status(404).json({ msg: 'Unable to delete user' });
+    }
+    res.status(200).json({
+      msg: 'User successfully deleted!',
+      user: deletedUser,
+    });
+  } catch (err) {
+    let errMsg = err.stack;
+    let message = 'Could not complete request';
+    console.log(errMsg);
+    res.status(500).json({ msg: message, errMsg });
+  }
+};
+
 // // @@ VERIFICATION ROUTE
 // // @@
 
@@ -166,7 +214,7 @@ exports.verifyToken = async (req, res, next) => {
     }
 
     // -- Verify Token
-    const verified = jwt.verify(cookie, process.env.TOKEN_SECRET);
+    const verified = jwt.verify(cookie, process.env.JWT_SECRET);
     // console.log('verified', verified);
 
     if (!verified) return res.json(false);
