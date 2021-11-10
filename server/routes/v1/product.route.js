@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const productController = require('../../controllers/product.controller');
-const { verifyTokenAndAuthorization } = require('../../utils/auth');
+const {
+  verifyTokenAndAuthorization,
+  verifyToken,
+} = require('../../utils/auth');
 
 // Routes start with /auth
 router.get('/', productController.index);
