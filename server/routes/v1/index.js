@@ -2,6 +2,7 @@ const express = require('express');
 const userRoutes = require('./user.route');
 const authRoutes = require('./auth.route');
 const productRoutes = require('./product.route');
+const cartRoutes = require('./product.route');
 const productVariantRoutes = require('./variant.route');
 const { verifyToken } = require('../../utils/auth');
 
@@ -29,10 +30,11 @@ router.get('/csrf-token', (req, res, next) => {
 });
 router.get('/status', (req, res) => res.status(200).send('OK'));
 
-router.use('/user', userRoutes);
+router.use('/users', userRoutes);
 router.use('/auth', authRoutes);
 router.use('/products', productRoutes);
-router.use('/variant/', productVariantRoutes);
+router.use('/carts', productRoutes);
+router.use('/variants', productVariantRoutes);
 
 // If no API routes are hit, send the React app...Not implemented yet
 // router.use("*", (req, res) => res.sendFile(path.join(__dirname, "../client/build/index.html")));
