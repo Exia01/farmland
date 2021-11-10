@@ -33,7 +33,7 @@ const ProductSchema = new Schema(
     price: {
       type: Number,
     },
-    variants: { type: Schema.Types.ObjectId, ref: 'variant' },
+    variants: { type: Schema.Types.ObjectId, ref: 'variants' },
     addedBy: { type: Schema.Types.ObjectId, ref: 'user' },
   },
   {
