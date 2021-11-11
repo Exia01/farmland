@@ -1,5 +1,3 @@
-const Product = require('../models/product.model');
-const Variant = require('../models/variant.model');
 const Cart = require('../models/variant.model');
 
 exports.index = async (req, res, next) => {
@@ -100,7 +98,7 @@ exports.deleteCart = async (req, res, next) => {
 
 // Get User Cart
 
-exports.getCart = async (req, res, next) => {
+exports.getUserCart = async (req, res, next) => {
   try {
     const userId = req.params.user_id;
     const foundCart = await Cart.findOne({ userId }).lean().exec();
