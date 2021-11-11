@@ -1,7 +1,5 @@
 const httpStatus = require('http-status');
-const { log } = require('winston');
 const Product = require('../models/product.model');
-const Variant = require('../models/variant.model');
 exports.index = async (req, res, next) => {
   // console.log(req.user);
   let limit = parseInt(req.query.limit); // Make sure to parse the limit to number
