@@ -11,6 +11,6 @@ router.post('/', verifyToken, cartController.createCart);
 router.get('/:cart_id', verifyToken, cartController.getCart);
 router.put('/:cart_id', verifyToken, cartController.updateCart);
 router.delete('/:cart_id', verifyToken, cartController.deleteCart);
-router.delete('/find/:user_id', verifyToken, cartController.getUserCart);
+router.get('/find/:user_id', verifyToken, cartController.getUserCart);
 
 module.exports = router;
