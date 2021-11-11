@@ -2,11 +2,7 @@ const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 
 const jwtDecode = require('jwt-decode');
-const {
-  createToken,
-  hashPassword,
-  verifyPassword,
-} = require('../utils/auth');
+const { createToken, hashPassword, verifyPassword } = require('../utils/auth');
 
 const User = require('../models/user.model');
 
