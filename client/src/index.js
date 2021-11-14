@@ -7,28 +7,13 @@ import reportWebVitals from './reportWebVitals';
 // Components
 
 // Material UI Baseline
-import { CssBaseline } from '@material-ui/core';
-
 import './index.css';
-
-// Contexts
-import CurrentThemeProvider from './contexts/theme.context';
-import AuthProvider from './contexts/auth.context';
-import  ProductProvider from './contexts/product.context';
 
 const app = (
   <BrowserRouter>
-    {/* <React.StrictMode> */}
-    <CssBaseline>
-      <AuthProvider>
-        <CurrentThemeProvider>
-          <ProductProvider>
-            <App />
-          </ProductProvider>
-        </CurrentThemeProvider>
-      </AuthProvider>
-    </CssBaseline>
-    {/* </React.StrictMode> */}
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   </BrowserRouter>
 );
 
