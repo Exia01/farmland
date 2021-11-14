@@ -1,9 +1,13 @@
 /* Seeder Script */
 // require the necessary libraries
-
+const path = require('path');
+require('dotenv-safe').config({
+  path: path.join(__dirname, '../../../.env'),
+  // sample: path.join(__dirname, '../../.env.example'),
+});
 const data = require('../../utils/dummy-data/seed');
 const MongoClient = require('mongodb').MongoClient;
-
+// const env = process.MONGO_URI;
 function randomIntFromInterval(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -12,7 +16,7 @@ function randomIntFromInterval(min, max) {
 async function seedDB() {
   console.log('hello??');
   // Connection URL
-  const uri ='URIGOESHERE'
+  const uri = process.env.MONGO_URI;
 
   console.log('hello??1');
   console.log(uri);
@@ -45,9 +49,9 @@ async function seedDB() {
 
 // seedDB();
 
-async function test() {
-  const uri =''
-    const client = new MongoClient(uri, { useNewUrlParser: true });
+async function seedProductsCollections() {
+  const uri = process.env.MONGO_URI;
+  const client = new MongoClient(uri, { useNewUrlParser: true });
   try {
     await client.connect();
 
@@ -78,4 +82,4 @@ async function test() {
   //     console.log('connectionClosed');
   //   });
 }
-test();
+seedProductsCollections();
