@@ -1,5 +1,4 @@
-MUI
-
+MUI:
 
 Hooks:
     - UseReducer:
@@ -11,7 +10,10 @@ CSS:
         - https://stackoverflow.com/questions/32351229/100vw-div-not-showing-full-width
         - https://stackoverflow.com/questions/45371811/how-to-set-child-div-with-100vw-of-device-width-when-parent-div-having-width-80
         - https://stackoverflow.com/questions/41385443/css-width-100vw-only-extending-to-one-side
-
+    
+    
+    Using multiple classes on Material UI "ClX":
+        -https://stackoverflow.com/questions/57557271/how-to-use-clsx-in-react
 
     Font stacking:
         - https://www.digitalocean.com/community/tutorials/css-system-font-stack
@@ -26,6 +28,8 @@ CSS:
 
 
 Others: 
+    Folder structure convention:
+        - https://www.robinwieruch.de/react-folder-structure
     
     Destructuring props:
         - https://stackoverflow.com/questions/46962269/destructuring-props-with-the-rest-properties
@@ -62,10 +66,6 @@ Others:
 
     Adding google login:
         - https://dev.to/sivaneshs/add-google-login-to-your-react-apps-in-10-mins-4del
-
-
-    Using multiple classes on Material UI "ClX":
-        -https://stackoverflow.com/questions/57557271/how-to-use-clsx-in-react
 
 
     random select:
