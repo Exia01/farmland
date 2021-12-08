@@ -38,4 +38,5 @@ const VariantSchema = new Schema({
   addedBy: { type: Schema.Types.ObjectId, ref: 'user' },
 });
 
-module.exports = ProductVariant = mongoose.model('Variant', VariantSchema); //this will be used by the ref
+// 'variants' will be used as the ref to populate
+module.exports = ProductVariant = mongoose.model('variants', VariantSchema); //this will be used by the ref
