@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const Variant = require('./variant.model');
 
 const ProductSchema = new Schema(
   {
@@ -33,7 +33,7 @@ const ProductSchema = new Schema(
     price: {
       type: Number,
     },
-    variants: { type: Schema.Types.ObjectId, ref: 'variants' },
+    variants: [{ type: Schema.Types.ObjectId, ref: 'variants' }],
     addedBy: { type: Schema.Types.ObjectId, ref: 'user' },
   },
   {
