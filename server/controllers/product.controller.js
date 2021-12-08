@@ -19,7 +19,6 @@ exports.index = async (req, res, next) => {
     sortBy = { createAt: -1 };
   }
 
-  console.log(skip, limit);
   let queryObj = {};
 
   if (req.query.name) {
