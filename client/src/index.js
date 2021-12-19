@@ -2,22 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import CurrentThemeProvider from './context/Theme';
 import reportWebVitals from './reportWebVitals';
 
-// Components
+// Contexts
+import CurrentThemeProvider from './context/Theme';
+import ProductProvider from './context/Product/index';
 
-// Material UI Baseline
 import './index.css';
 
 const app = (
-  <BrowserRouter>
-    <React.StrictMode>
-      <CurrentThemeProvider>
-        <App />
-      </CurrentThemeProvider>
-    </React.StrictMode>
-  </BrowserRouter>
+  <React.StrictMode>
+    <CurrentThemeProvider>
+      <ProductProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ProductProvider>
+    </CurrentThemeProvider>
+  </React.StrictMode>
 );
 
 ReactDOM.render(app, document.getElementById('root'));
