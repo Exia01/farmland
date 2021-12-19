@@ -1,10 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 // Components
 import ProductCard from './../ProductCard/index';
+import ThreeCardsSegment from './ThreeCardsSegment';
 
 export default function LandingPageSegment() {
+  let navigate = useNavigate();
+
+  function onClickHandler() {
+    navigate('/products');
+  }
+
   return (
     <Box
       sx={{
@@ -81,8 +90,8 @@ export default function LandingPageSegment() {
         Our Delicious Products
       </Typography>
       <ButtonContainerStyledDiv>
-        <Button variant='outlined' color='secondary'>
-          Outlined
+        <Button variant='outlined' color='secondary' onClick={onClickHandler}>
+          View All Products
         </Button>
       </ButtonContainerStyledDiv>
       <StyledDivider />
@@ -90,21 +99,22 @@ export default function LandingPageSegment() {
       <Box
         sx={{
           display: 'flex',
+          width: '100%',
           flexFlow: { xs: 'wrap', md: 'row' },
           justifyContent: 'center',
+          alignItems: 'stretch',
+          textAlign: 'left',
           gap: { xs: 1, md: 2 },
           '& .MuiCard-root': {
             flex: {
               xs: '90%',
               sm: '80%',
-              md: '33%',
+              md: '33.3%',
             },
           },
         }}
       >
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ThreeCardsSegment />
       </Box>
     </Box>
   );
