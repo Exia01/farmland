@@ -7,26 +7,27 @@ import {
   Button,
 } from '@mui/material';
 
-export default function ProductCard() {
+export default function ProductCard(props) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
+        sx={{ minHeight: 250, objectFit: 'contain' }}
         component='img'
         height='140'
-        image='https://via.placeholder.com/400'
+        image={props.thumbnail}
         alt='green iguana'
       />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
-          Lizard
+          {props.title}
         </Typography>
         <Typography variant='body2' color='text.secondary'>
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {/* {props.desc} */}
+          From ${props.price}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size='small'>Share</Button>
+        <Button> View Product</Button>
       </CardActions>
     </Card>
   );
