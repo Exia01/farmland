@@ -23,7 +23,6 @@ import MobileDrawer from './MobileDrawer/index';
 // A way to do do conditionals
 // sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
 
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -44,7 +43,7 @@ export default function Navbar() {
         title='Farmland'
         elevation={0}
         position='relative'
-        sx={{ padding: '16px 0' }}
+        sx={{ padding: '16px 0', backgroundColor: 'inherit' }}
       >
         <Container disableGutters={true}>
           <Toolbar>
@@ -115,7 +114,6 @@ export default function Navbar() {
                 onClick={handleDrawerOpen}
                 sx={{ display: { md: 'none' } }}
               >
-                
                 <MenuIcon />
               </IconButton>
             </Box>
@@ -129,8 +127,6 @@ export default function Navbar() {
     </>
   );
 }
-
-
 
 // https://stackoverflow.com/questions/68471759/when-migrating-to-material-ui-v5-how-to-deal-with-conditional-classes/68472931#68472931
 
