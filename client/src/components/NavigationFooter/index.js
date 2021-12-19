@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
 
-import Box from '@mui/material/Box';
+import { Box, Link } from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
@@ -50,7 +50,13 @@ export default function NavigationFooter() {
   }, [value, pathMap, pathMapObj]);
 
   return (
-    <Box sx={{}}>
+    <Box
+      sx={{
+        display: {
+          md: 'none',
+        },
+      }}
+    >
       <BottomNavigation
         showLabels
         value={value}
@@ -58,9 +64,24 @@ export default function NavigationFooter() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label='Home' icon={<HomeIcon />} />
-        <BottomNavigationAction label='Shop' icon={<ShoppingBasketIcon />} />
-        <BottomNavigationAction label='Login' icon={<AccountCircleIcon />} />
+        <BottomNavigationAction
+          label='Home'
+          icon={<HomeIcon color='inherit' />}
+          component={RouterLink}
+          to={pathMap[0]}
+        />
+        <BottomNavigationAction
+          label='Shop'
+          icon={<ShoppingBasketIcon />}
+          component={RouterLink}
+          to={pathMap[1]}
+        />
+        <BottomNavigationAction
+          label='Login'
+          icon={<AccountCircleIcon />}
+          component={RouterLink}
+          to={pathMap[2]}
+        />
       </BottomNavigation>
     </Box>
   );
