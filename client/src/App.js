@@ -8,7 +8,7 @@ import Landing from './pages/Landing';
 import Products from './pages/Products/index';
 
 // Css
-
+import './App.css';
 // MUI
 import { Container, Paper, ThemeProvider } from '@mui/material';
 
