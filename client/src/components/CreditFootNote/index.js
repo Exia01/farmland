@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Link } from '@mui/material';
 import { styled } from '@mui/system';
 
 export default function CreditFootNote() {
@@ -24,35 +24,38 @@ export default function CreditFootNote() {
       {/*  */}
       <LinkTagContainerStyledDiv className='credit-link'>
         <Typography variant='caption' display='block' gutterBottom>
-          <a
+          <Link
+            underline='hover'
             href='https://icons8.com/icon/12131/family'
             target='_blank'
             rel='noopener noreferrer'
           >
             Family icon by Icons8
-          </a>
+          </Link>
         </Typography>
       </LinkTagContainerStyledDiv>
       <LinkTagContainerStyledDiv className='credit-link'>
         <Typography variant='caption' display='block' gutterBottom>
-          <a
+          <Link
+            underline='hover'
             href='https://icons8.com/icon/20873/organic-food'
             target='_blank'
             rel='noopener noreferrer'
           >
             Organic Food icon by Icons8
-          </a>
+          </Link>
         </Typography>
       </LinkTagContainerStyledDiv>
       <LinkTagContainerStyledDiv className='credit-link'>
         <Typography variant='caption' display='block' gutterBottom>
-          <a
+          <Link
+            underline='hover'
             href='https://icons8.com/icon/12131/family'
             target='_blank'
             rel='noopener noreferrer'
           >
             Family icon by Icons8
-          </a>
+          </Link>
         </Typography>
       </LinkTagContainerStyledDiv>
     </Box>
