@@ -3,11 +3,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 //logo
-import logo from '../../uploads/images/icons/farmLogo.png'
+import logo from '../../uploads/images/icons/farmLogo.png';
 //Banner image
 import BannerImage from '../../uploads/images/banners/michael-bourgault-YvvHEQNgMcU-unsplash-v2.jpg';
 // css
 import styles from './style.module.css';
+import { GlobalStyles } from '@mui/material';
 
 export default function LandingPageBanner() {
   return (
@@ -15,6 +16,7 @@ export default function LandingPageBanner() {
       className={styles.root}
       style={{ backgroundImage: `url(${BannerImage})` }}
     >
+      <GlobalStyles styles={{ 'html, body': { overflowX: 'hidden' } }} />
       <div className={styles.overlay}>
         <div className={styles.contentContainer}>
           <div className={styles.imgDiv}>
@@ -22,7 +24,7 @@ export default function LandingPageBanner() {
           </div>
           {/* <Typography variant='h3'>FARMLAND</Typography> */}
           <div className={styles.item}>
-          <Link component={RouterLink} to='/'>
+            <Link component={RouterLink} to='/'>
               <p className={styles.title}>Shop Now</p>
               <p>
                 {' '}
