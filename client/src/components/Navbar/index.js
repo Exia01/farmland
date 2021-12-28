@@ -43,7 +43,13 @@ export default function Navbar() {
         title='Farmland'
         elevation={0}
         position='relative'
-        sx={{ padding: '16px 0', backgroundColor: 'inherit' }}
+        sx={{
+          padding: '16px 0',
+          backgroundColor: 'inherit',
+          borderBottom: '1px solid',
+          // borderBottomColor: '#999999',
+          borderBottomColor: 'divider.main',
+        }}
       >
         <Container disableGutters={true}>
           <Toolbar>
@@ -106,7 +112,7 @@ export default function Navbar() {
               }}
             >
               <ThemeToggle />
-              <IconButton color='inherit'>
+              <IconButton sx={{ color: 'text.primary' }}>
                 <ShoppingCart />
               </IconButton>
               <IconButton
