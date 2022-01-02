@@ -1,3 +1,5 @@
+import { Link as RouterLink } from 'react-router-dom';
+
 import {
   Card,
   CardActions,
@@ -5,6 +7,7 @@ import {
   CardMedia,
   Typography,
   Button,
+  Link,
 } from '@mui/material';
 
 export default function ProductCard(props) {
@@ -27,7 +30,16 @@ export default function ProductCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button> View Product</Button>
+        <Button>
+          {' '}
+          <Link
+            component={RouterLink}
+            to={`/products/${props.productLink}`}
+            underline='none'
+          >
+            View Product
+          </Link>
+        </Button>
       </CardActions>
     </Card>
   );
