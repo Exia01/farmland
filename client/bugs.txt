@@ -1,1 +1,2 @@
--Mobile drawer width-> check why it hides content behind entirely
+- Mobile drawer width-> check why it hides content behind entirely
+- Products needs full background --either white or black bg--
