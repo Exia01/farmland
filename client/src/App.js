@@ -2,10 +2,12 @@ import { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 //Components
 import Navbar from './components/Navbar';
+import NavigationFooter from './components/NavigationFooter';
 
 // Pages
 import Landing from './pages/Landing';
 import Products from './pages/Products/index';
+import ProductDetail from './pages/ProductDetail/index';
 
 // Css
 import './App.css';
@@ -14,7 +16,7 @@ import { Container, Paper, ThemeProvider } from '@mui/material';
 
 // Context
 import { ThemeContext } from './context/Theme/index';
-import NavigationFooter from './components/NavigationFooter';
+
 export default function App() {
   const theme = useContext(ThemeContext);
   return (
@@ -25,6 +27,7 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/products' element={<Products />} />
+            <Route path='/products/:id' element={<ProductDetail />} />
             <Route
               path='*'
               element={
