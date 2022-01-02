@@ -76,7 +76,7 @@ export default function Products() {
             />
           ))
         ) : (
-          <Typography variant='h2' gutterBottom component='h2'>
+          <Typography variant='h3' gutterBottom component='h3'>
             No Products Available
           </Typography>
         )}
