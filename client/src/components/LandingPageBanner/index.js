@@ -24,7 +24,7 @@ export default function LandingPageBanner() {
           </div>
           {/* <Typography variant='h3'>FARMLAND</Typography> */}
           <div className={styles.item}>
-            <Link component={RouterLink} to='/'>
+            <Link component={RouterLink} to='/products'>
               <p className={styles.title}>Shop Now</p>
               <p>
                 {' '}
