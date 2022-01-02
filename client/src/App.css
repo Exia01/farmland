@@ -1,6 +1,9 @@
-html,
-body,
-#root,
-.app {
-  height: 100%;
+@media screen and (min-width: 1200px) {
+  html,
+  body,
+  #root,
+  .app {
+    height: 100%;
+    padding: 1rem 3rem;
+  }
 }
