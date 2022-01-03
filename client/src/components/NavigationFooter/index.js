@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../../context/Auth';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 
 import { Box, Link } from '@mui/material';
@@ -13,8 +14,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function NavigationFooter() {
+  const { isAuthenticated } = useContext(AuthContext);
   const [value, setValue] = useState(0);
   let location = useLocation();
+  let isAuth = isAuthenticated();
   const [pathMap, setPathMap] = useState([
     '/',
     '/products',
@@ -40,7 +43,6 @@ export default function NavigationFooter() {
     function setValuePathMap() {
       const { pathname } = location;
       const value = pathMapObj[pathname.toLowerCase()];
-      console.log(value);
       if (value > -1) {
         setValue(value);
       }
@@ -76,12 +78,21 @@ export default function NavigationFooter() {
           component={RouterLink}
           to={pathMap[1]}
         />
-        <BottomNavigationAction
-          label='Login'
-          icon={<AccountCircleIcon />}
-          component={RouterLink}
-          to={pathMap[2]}
-        />
+        {isAuth ? (
+          <BottomNavigationAction
+            label='Account'
+            icon={<AccountCircleIcon />}
+            component={RouterLink}
+            to={pathMap[3]}
+          />
+        ) : (
+          <BottomNavigationAction
+            label='Login'
+            icon={<AccountCircleIcon />}
+            component={RouterLink}
+            to={pathMap[2]}
+          />
+        )}
       </BottomNavigation>
     </Box>
   );
