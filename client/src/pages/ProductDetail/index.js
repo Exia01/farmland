@@ -14,17 +14,13 @@ import {
   Typography,
   Grid,
   Divider,
-  typography,
   Button,
-  TextField,
-  Input,
   GlobalStyles,
   Paper,
 } from '@mui/material';
 
 export default function ProductDetail() {
   const [currentQty, setCurrentQty] = useState(1);
-  let params = useParams();
   const { id } = useParams();
   const { products } = useContext(ProductContext);
 
