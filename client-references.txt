@@ -25,7 +25,8 @@ CSS:
     react pagination:
         - https://www.bezkoder.com/react-pagination-hooks/
 
-
+    Prevent padding to body on popOver:
+        - https://github.com/mui-org/material-ui/issues/17353
 
 Others: 
     Folder structure convention:
