@@ -1,13 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import {
+  Drawer,
+  List,
+  Divider,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  IconButton,
+} from '@mui/material';
 
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const drawerWidth = 250;
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -20,10 +25,38 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function MobileDrawer({ open, handleDrawerClose }) {
+  let navigate = useNavigate();
+
+  const itemsList = [
+    {
+      text: 'Shop Online',
+      icon: <StorefrontIcon />,
+      onClick: () => {
+        navigate('../products');
+        handleDrawerClose();
+      },
+    },
+    {
+      text: 'Contact Us',
+      icon: <StorefrontIcon />,
+      onClick: () => {
+        navigate('../products', { push: true });
+        handleDrawerClose();
+      },
+    },
+    {
+      text: 'Cart',
+      icon: <ShoppingCartIcon />,
+      onClick: () => {
+        navigate('../products', { push: true });
+        handleDrawerClose();
+      },
+    },
+  ];
   return (
     <Drawer
       sx={{
-        backgroundColor:'primary.main',
+        backgroundColor: 'neutral.main',
         // width: drawerWidth,
         // flexShrink: 0,
         '& .MuiDrawer-paper': {
@@ -34,24 +67,27 @@ export default function MobileDrawer({ open, handleDrawerClose }) {
       anchor='right'
       onClose={handleDrawerClose}
       open={open}
+      elevation={0}
     >
-      {/* <DrawerHeader>
+      <DrawerHeader>
         <IconButton onClick={handleDrawerClose}>
           <ChevronLeftIcon />
         </IconButton>
-      </DrawerHeader> */}
-      {/* <Divider /> */}
+      </DrawerHeader>
+      <Divider sx={{ color: 'divider.main', borderBottomWidth: '2px' }} />
+
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        {itemsList.map((item, index) => {
+          const { text, onClick: onClickFunc, icon } = item;
+          return (
+            <ListItem button key={text} onClick={onClickFunc}>
+              <ListItemIcon>{icon}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          );
+        })}
       </List>
-      <Divider />
+      <Divider sx={{ color: 'divider.main' }} />
     </Drawer>
   );
 }
