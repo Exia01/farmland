@@ -12,7 +12,6 @@ import {
   MenuItem,
 } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 
 export default function AuthContainer() {
   let navigate = useNavigate();
@@ -56,7 +55,7 @@ export default function AuthContainer() {
           onClick={handleMenuClick}
           sx={{ color: 'text.primary' }}
         >
-          <AccountCircle />
+          <AccountCircleIcon />
         </IconButton>
         <Menu
           id='basic-menu'
