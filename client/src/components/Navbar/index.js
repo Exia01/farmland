@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import ThemeToggle from '../ThemeToggle';
+import MobileDrawer from './MobileDrawer/index';
+import AuthContainer from './AuthContainer';
 
 // Logo
 import logo from '../../uploads/images/icons/farmlandLogo3.png';
@@ -17,7 +19,6 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
-import MobileDrawer from './MobileDrawer/index';
 
 // styles
 // A way to do do conditionals
@@ -31,8 +32,13 @@ export default function Navbar() {
   }
 
   function handleDrawerClose(e) {
-    if (e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) {
-      return;
+    const evenType = e?.type;
+
+    if (evenType) {
+      // if (e.type === 'keydown' && (e.key === 'Tab' || e.key === 'Shift')) {
+      //   return;
+      // }
+      // console.log(e.type);
     }
     setOpen(false);
   }
@@ -80,7 +86,7 @@ export default function Navbar() {
               >
                 <Link
                   component={RouterLink}
-                  to='/'
+                  to='/products'
                   sx={{ color: 'text.primary' }}
                   underline='hover'
                 >
@@ -112,13 +118,13 @@ export default function Navbar() {
               }}
             >
               <ThemeToggle />
+              <AuthContainer />
               <IconButton sx={{ color: 'text.primary' }}>
                 <ShoppingCart />
               </IconButton>
               <IconButton
-                color='inherit'
                 onClick={handleDrawerOpen}
-                sx={{ display: { md: 'none' } }}
+                sx={{ display: { md: 'none' }, color: 'text.primary' }}
               >
                 <MenuIcon />
               </IconButton>
