@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 // Contexts
 import CurrentThemeProvider from './context/Theme';
 import ProductProvider from './context/Product/index';
+import AuthProvider from './context/Auth';
 
 import './index.css';
 
@@ -14,9 +15,11 @@ const app = (
   <React.StrictMode>
     <CurrentThemeProvider>
       <ProductProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <AuthProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </AuthProvider>
       </ProductProvider>
     </CurrentThemeProvider>
   </React.StrictMode>
