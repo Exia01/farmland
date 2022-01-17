@@ -32,11 +32,11 @@ export default function AuthContainer() {
 
   function onIconClickHandler() {}
 
-  if (!isAuthenticated()) {
+  if (!isAuth) {
     return (
       <Button
         variant='text'
-        sx={{ color: 'text.primary' }}
+        sx={{ color: 'text.primary', display: { xs: 'none', md: 'block' } }}
         onClick={onButtonClickHandler}
       >
         Login
