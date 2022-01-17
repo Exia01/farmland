@@ -8,6 +8,8 @@ import NavigationFooter from './components/NavigationFooter';
 import Landing from './pages/Landing';
 import Products from './pages/Products/index';
 import ProductDetail from './pages/ProductDetail/index';
+import Login from './pages/Login/index';
+import Register from './pages/Register/index';
 
 // Css
 import './App.css';
@@ -27,6 +29,8 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/products' element={<Products />} />
+            <Route path='/Login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
             <Route path='/products/:id' element={<ProductDetail />} />
             <Route
               path='*'
