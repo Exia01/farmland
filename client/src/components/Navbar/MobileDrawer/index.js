@@ -1,4 +1,7 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../context/Auth';
+
 import { styled } from '@mui/material/styles';
 import {
   Drawer,
@@ -13,6 +16,8 @@ import {
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 const drawerWidth = 250;
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -25,8 +30,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function MobileDrawer({ open, handleDrawerClose }) {
+  const { isAuthenticated } = useContext(AuthContext);
   let navigate = useNavigate();
-
+  let isAuth = isAuthenticated();
   const itemsList = [
     {
       text: 'Shop Online',
@@ -52,6 +58,23 @@ export default function MobileDrawer({ open, handleDrawerClose }) {
         handleDrawerClose();
       },
     },
+    isAuth
+      ? {
+          text: 'Account',
+          icon: <AccountCircleIcon />,
+          onClick: () => {
+            navigate('./account', { push: true });
+            handleDrawerClose();
+          },
+        }
+      : {
+          text: 'Login',
+          icon: <AccountCircleIcon />,
+          onClick: () => {
+            navigate('./login', { push: true });
+            handleDrawerClose();
+          },
+        },
   ];
   return (
     <Drawer
